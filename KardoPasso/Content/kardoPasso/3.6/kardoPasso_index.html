@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title>TITLE</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/systemPics/kardo-icon.png" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css">
+        <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="assets/datatables/media/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-style/css/dk-style.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-diagrams/css/diagrams-style.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-diagrams/css/uml-java.css">
+		<link rel="stylesheet" type="text/css" href="css/kardo.css">
+		
+		
+		
+        <link rel="stylesheet" type="text/css" href="assets/youDontNeedJavaScript/carousel-1.css">
+		<link rel="stylesheet" type="text/css" href="css/kardoPasso.css">
+		
+	</head>
+
+	<body>
+		<div class="dk-container">
+			<div id="resultForDisplayChanging"></div>
+			<!-- DK-TOP-SECTION -->
+			<header class="dk-top-section">
+				
+				<div class="navbar-icon sidebar-close"><i class="fa fa-bars"></i></div>
+				
+				<div class="kardo-logo">
+					<a href="index.html"><img src="img/systemPics/kardo.png" alt="Kardo" class="hidden-xs"/>
+					<img src="img/systemPics/kardo-k.png" alt="Kardo" class="hidden-lg hidden-md hidden-sm small"/>
+					<span class="logo-sub">DkStyle</span></a>
+				</div>
+				
+				<div class="log-section">
+					<!--<span class="btn-log hidden-xs open-dk-popup" data-id="dk-popup-login"><a href="javascript:;">Oturum Aç</a></span>-->
+					
+					<div class="log-nav hidden-xs">
+						<span class="dk-dropdown-btn search-box-btn" >
+							<span class="dk-icon"><i class="fa fa-search" data-id="search-box-wide"></i></span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-messages-box">
+							<span class="dk-icon"><i class="fa fa-envelope"></i></span>
+							<span class="dk-badge bg-danger">2</span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-notification-box">
+							<span class="dk-icon"><i class="fa fa-bell"></i></span>
+							<span class="dk-badge bg-danger">2</span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-apps-box">
+							<span class="dk-icon"><i class="fa fa-ellipsis-v"></i></span>
+						</span>
+					</div>
+					<span class="cursor-p hidden-xs dk-dropdown" data-dropdown="dk-user-box">	<img src="img/systemPics/kardo-icon.png" alt="" />		</span>
+					<a href="#" class="hidden-lg hidden-md hidden-sm">	<img src="img/systemPics/kardo-icon.png" alt="" />		</a> 
+				</div>
+				
+				<!-- dk-apps-box -->
+				<div id="dk-apps-box" class="dk-apps-box hidden-xs">
+					<div class="aplications">
+						<div class="aplications-links">
+							<a href="colors.html"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Colors</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+						</div>
+					</div>
+					<a href="#" class="all-app">Daha Fazlası</a>
+				</div>
+				<!-- dk-user-box -->
+				<div id="dk-user-box" class="dk-user-box hidden-xs">
+					<div class="active-account">
+						<div class="user-photo">
+							<img src="img/systemPics/kardo-icon.png" alt="" />
+							<a href="#">Fotorafı Değiştir</a>
+						</div>
+						<div class="user-info">
+							<div class="user-rname">Kardo</div>
+							<div class="username">@Kardo</div>
+							<div class="user-profil-link"><a href="#" class="dk-btn dk-btn-primary">Profile Git</a></div>
+						</div>
+						<div class="clear-both"></div>
+					</div>
+					<div class="other-accounts">
+						<div class="accounts-item">
+							<a href="#">
+								<img src="img/systemPics/kardo-icon.png" alt="" />
+								<div class="user-rname">Kardo</div>
+								<div class="username">@Kardo</div>
+							</a>
+						</div>
+					</div>
+					<div class="dk-user-box-log">
+						<div class="row margin-0">
+							<div class="col-xs-6 pad-l-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Hesap Ekle</a></div>
+							<div class="col-xs-6 pad-r-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Oturumu Kapat</a></div>
+						</div>
+					</div>
+				</div>
+				<!-- dk-notification-box -->
+				<div id="dk-notification-box" class="dk-notification-box hidden-xs">
+					<div class="notifications-links">
+						<div class="dk-notification-box-h"><img src="img/systemPics/kardo.png" alt="" /></div>
+						<a href="#"><div class="notifications-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link unread">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+					</div>
+					<a href="#" class="all-noti">Tümünü Gör</a>
+				</div>
+				<!--dk-messages-box-->
+				<div id="dk-messages-box" class="dk-messages-box hidden-xs">
+					<div class="dk-message-box-h">Mesajlar(2)</div>
+					<div class="messages-links">
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link unread">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+					</div>
+					<a href="#" class="all-messages">Tümünü Gör</a>
+				</div>
+				<!--search-box-wide-->
+				<div id="search-box-wide" class="search-box-wide">
+					<form method="post">
+						<input type="text" placeholder="Aradığınız Kelimeyi yazınız.."/>
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+				
+				<nav class="menu-horizontal hidden-sm hidden-xs">
+					<ul>
+						<li><a href="index.html">Anasayfa</a></li>
+						<li><a href="#">Openable</a>
+							<ul>
+								<li><a href="#">Sub Item 1</a></li>
+								<li><a href="#">Sub Item 2</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</nav>
+							
+				<div class="clear-both"></div>
+			</header>
+			
+				
+		<!-- DK-TOP-SECTION END -->
+		<!--- sidebar-menu -->
+			<nav class="menu-section" id="accordion">
+				<div class="dk-sidebar-menu-close sidebar-close" id="dk-sidebar-menu-close" style="left:-100%;" ></div>
+				
+				<div class="dk-sidebar-menu sidebar-dark-theme" id="dk-sidebar-menu" style="left:-320px;">
+					<!--- logo section --->
+					<span id="dk-sidebar-menu-off-fixed" class="dk-sidebar-menu-off-fixed" onClick=""><i class="fa fa-thumb-tack"></i></span>
+					<div class="dk-sidebar-menu-off">
+						<a href="index.html"><img src="img/systemPics/kardo.png"/><span class="logo-sub">DkStyle</span></a>
+						<span class="dk-sidebar-menu-off-close sidebar-close"><i class="fa fa-chevron-left"></i></span>
+						<div class="clear-both"></div>
+					</div>
+					<!--- log-off / log-on --->
+					<div class="dk-sidebar-menu-log">
+						<div class="dk-sidebar-menu-log-on">
+							<a href="login.html"><i class="fa fa-user mar-r-10"></i>OTURUM AÇ</a>
+						</div>
+						<!--<div class="dk-sidebar-menu-log-off">
+							<a href="#">
+								<img src="img/systemPics/kardo-icon.png" alt="" />
+								<span>Doğuş Kar</span>
+							</a>
+						</div>-->
+					</div>
+					
+					<!--- menu --->
+					<ul id="dk-accordion-menu">
+						<li class="dk-sidebar-menu-header">
+								<a href="#" class="header">Header</a>
+						</li>
+						<li class="dk-sidebar-menu-item active">
+							<a href="index.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-home" ></i>
+								<span class="dk-sidebar-menu-item-title">HomePage</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-book" ></i>
+								<span class="dk-sidebar-menu-item-title">UI Elements</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="general.html">General</a></li>
+								<li><a href="buttons.html">Buttons</a></li>
+								<li><a href="widgets.html">Widgets</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-tasks" ></i>
+								<span class="dk-sidebar-menu-item-title">Form Stuff</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="form-components.html">Form Components</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="tables.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-table" ></i>
+								<span class="dk-sidebar-menu-item-title">Tables</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="mailbox.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-commenting-o" ></i>
+								<span class="dk-sidebar-menu-item-title">Mailbox</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-plus" ></i>
+								<span class="dk-sidebar-menu-item-title">Extra</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="404.html">404 Error</a></li>
+								<li><a href="500.html">500 Error</a></li>
+							</ul>
+						</li>
+					</ul>
+					
+					<!--- social sites --->
+					<div class="dk-sidebar-menu-social">
+						<a href="https://www.facebook.com/kardo.official/" target="blank"><i class="fa fa-facebook-official"></i></a>
+						<a href="https://twitter.com/KardoOfficial" target="blank"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/kardo.official/" target="blank"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.youtube.com/doguskar" target="blank"><i class="fa fa-youtube"></i></a>
+					</div>
+					<div class="dk-sidebar-menu-footer">
+						<img src="img/systemPics/kardo.png" alt="" />
+						<span class="cursor-d">Kopyalanamaz © 2017</span>
+					</div>
+					
+				</div>
+			</nav>
+			<!--- sidebar-menu end -->
+			<article class="content-section col-xs-12" id="content-section">
+				<div class="carouselYDNJS">
+					<div class="carouselYDNJS-inner">
+						<input class="carouselYDNJS-open" type="radio" id="carouselYDNJS-1" name="carouselYDNJS" aria-hidden="true" hidden="" checked="checked">
+						<div class="carouselYDNJS-item">
+							<img src="img/uploads/25022019200544-erzurum24.jpg">
+						</div>
+						<input class="carouselYDNJS-open" type="radio" id="carouselYDNJS-2" name="carouselYDNJS" aria-hidden="true" hidden="">
+						<div class="carouselYDNJS-item">
+							<img src="img/uploads/25022019200544-erzurum24.jpg">
+						</div>
+						<input class="carouselYDNJS-open" type="radio" id="carouselYDNJS-3" name="carouselYDNJS" aria-hidden="true" hidden="">
+						<div class="carouselYDNJS-item">
+							<img src="img/uploads/25022019200544-erzurum24.jpg">
+						</div>
+						<input class="carouselYDNJS-open" type="radio" id="carouselYDNJS-4" name="carouselYDNJS" aria-hidden="true" hidden="">
+						<div class="carouselYDNJS-item">
+							<img src="img/uploads/25022019200544-erzurum24.jpg">
+						</div>
+						<input class="carouselYDNJS-open" type="radio" id="carouselYDNJS-5" name="carouselYDNJS" aria-hidden="true" hidden="">
+						<div class="carouselYDNJS-item">
+							<img src="img/uploads/25022019200544-erzurum24.jpg">
+						</div>
+						<label for="carouselYDNJS-3" class="carouselYDNJS-control prev control-1">‹</label>
+						<label for="carouselYDNJS-2" class="carouselYDNJS-control next control-1">›</label>
+						<label for="carouselYDNJS-1" class="carouselYDNJS-control prev control-2">‹</label>
+						<label for="carouselYDNJS-3" class="carouselYDNJS-control next control-2">›</label>
+						<label for="carouselYDNJS-2" class="carouselYDNJS-control prev control-3">‹</label>
+						<label for="carouselYDNJS-4" class="carouselYDNJS-control next control-3">›</label>
+						<label for="carouselYDNJS-3" class="carouselYDNJS-control prev control-4">‹</label>
+						<label for="carouselYDNJS-5" class="carouselYDNJS-control next control-4">›</label>
+						<label for="carouselYDNJS-4" class="carouselYDNJS-control prev control-5">‹</label>
+						<label for="carouselYDNJS-1" class="carouselYDNJS-control next control-5">›</label>
+						<ol class="carouselYDNJS-indicators">
+							<li>
+								<label for="carouselYDNJS-1" class="carouselYDNJS-bullet">•</label>
+							</li>
+							<li>
+								<label for="carouselYDNJS-2" class="carouselYDNJS-bullet">•</label>
+							</li>
+							<li>
+								<label for="carouselYDNJS-3" class="carouselYDNJS-bullet">•</label>
+							</li>
+							<li>
+								<label for="carouselYDNJS-4" class="carouselYDNJS-bullet">•</label>
+							</li>
+							<li>
+								<label for="carouselYDNJS-5" class="carouselYDNJS-bullet">•</label>
+							</li>
+						</ol>
+					</div>
+				</div>
+				
+				<div class="kardoPasso-content">
+					<h1>All Events</h1>
+					<div class="row">
+						<div class="KP-content-l  col-sm-4 col-md-2 col-xl-1 hidden-xs">
+							<div class="categoryMenu">
+								<div class="CM-header"><div class="fa fa-calendar"></div><div class="CMH-txt">WHEN</div></div>
+								<div class="CM-items">
+									<div class="CM-item"><a href="javascript;">TODAY</a></div>
+									<div class="CM-item"><a href="javascript;">TOMORROW</a></div>
+									<div class="CM-item"><a href="javascript;">THIS WEEK</a></div>
+									<div class="CM-item"><a href="javascript;">THIS MONTH</a></div>
+								</div>
+								<div class="CM-header subH">Start Date</div>
+								<input type="date" />
+								<div class="CM-header subH">End Date</div>
+								<input type="date" />
+								
+								<div class="CM-header"><div class="fa fa-map-marker"></div><div class="CMH-txt">WHERE</div></div>
+							</div>
+						</div>
+						<div class="KP-content-r col-sm-8 col-md-10 col-xl-11 col-xs-12">
+							<div class="eventMainBox">
+								<img src="img/uploads/25022019200544-erzurum24.jpg" alt="" />
+								<div class="eMBTxtBox-overlay">
+									<div class="eMBTxtBox">
+										<div class="eMBTxtBox-left">B. B. Erzurumspor - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş.</div>
+										<div class="eMBTxtBox-right">
+											<div class="txtBoxL-Day">03</div>
+											<div class="txtBoxL-Month">Mar</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="eventMainBox">
+								<img src="img/uploads/25022019200544-erzurum24.jpg" alt="" />
+								<div class="eMBTxtBox-overlay">
+									<div class="eMBTxtBox">
+										<div class="eMBTxtBox-left">B. B. Erzurumspor - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş.</div>
+										<div class="eMBTxtBox-right">
+											<div class="txtBoxL-Day">03</div>
+											<div class="txtBoxL-Month">Mar</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="eventMainBox">
+								<img src="img/uploads/25022019200544-erzurum24.jpg" alt="" />
+								<div class="eMBTxtBox-overlay">
+									<div class="eMBTxtBox">
+										<div class="eMBTxtBox-left">B. B. Erzurumspor - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş.</div>
+										<div class="eMBTxtBox-right">
+											<div class="txtBoxL-Day">03</div>
+											<div class="txtBoxL-Month">Mar</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="eventMainBox">
+								<img src="img/uploads/25022019200544-erzurum24.jpg" alt="" />
+								<div class="eMBTxtBox-overlay">
+									<div class="eMBTxtBox">
+										<div class="eMBTxtBox-left">B. B. Erzurumspor - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş. - Galatasaray A.Ş.</div>
+										<div class="eMBTxtBox-right">
+											<div class="txtBoxL-Day">03</div>
+											<div class="txtBoxL-Month">Mar</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</article>
+			<div class="clear-both"></div>
+			<footer class="footer-section dk-footer-sec" id="footer-section">
+				<div class="row margin-0">
+					<div class="col-md-2 hidden-xs"></div>
+						<div class="col-md-4 col-xs-12">
+							<a href="#"><img src="img/systemPics/kardo.png" alt="Kardo"/></a>
+							<div>Kopyalanamaz © Tasarım ve Kodlama: <a href="#" >Doğuş Kar</a></div>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<div class="row">
+								<div class="col-xs-6 footer-links">
+									<h1>Header</h1>
+									<ul>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-6 footer-links">
+									<h1>Header</h1>
+									<ul>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					<div class="col-md-2  hidden-xs"></div>
+				</div>
+			</footer>
+		
+		</div>
+		
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type='text/javascript' src='assets/jquery/jquery-3.2.1.min.js'></script>
+		<script src="assets/jquery-ui/js/jquery-ui.min.js"></script><!--For Draggable-->
+		<script src="assets/bootstrap/js/bootstrap.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-settings.js"></script>
+		<script src="assets/dcjqaccordion/jquery.dcjqaccordion.2.7.min.js"></script>
+		<script src="assets/dcjqaccordion/dcjqaccordion-settings.js"></script>
+		<script src="assets/nicescroll/js/jquery.nicescroll.min.js"></script>
+		<script src="assets/js.cookie/js.cookie.js"></script>
+		<script src="assets/nicescroll/js/nicescroll-settings.js"></script>
+		<script src="assets/datatables/media/js/jquery.dataTables.min.js"></script>
+		<script src="assets/datatables/media/js/jquery.dataTables-settings.js"></script>
+        <script src="assets/dk-style/js/dk-javascript.js"></script>
+        <script src="assets/dk-style/js/dk-sidebar.js"></script>
+        <script src="assets/dk-style/js/dynamic-popup.js"></script>
+        <script src="assets/dk-style/js/dk-regex.js"></script>
+        
+		<script src="assets/count/count.js"></script>
+		<script src="assets/gritter/js/jquery.gritter.min.js"></script>
+		<script src="assets/gritter/js/gritter-settings.js"></script>
+		
+		<!---->
+			<script src="assets\dk-diagrams\js\ddp.js"></script>
+			<script src="assets\dk-diagrams\js\diagrams.js"></script>
+		<!---->
+	</body>
+</html>

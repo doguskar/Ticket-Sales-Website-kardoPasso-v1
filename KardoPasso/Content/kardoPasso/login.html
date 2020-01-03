@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title>Log In</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/systemPics/kardo-icon.png" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-style/css/dk-style.css">
+		<link rel="stylesheet" type="text/css" href="css/kardo.css">
+		<style type="text/css">
+			body{
+				background: transparent;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<div class="dk-container">
+			<article class="content-section-table bg-img">
+				<div class="middle shadow">
+					<div class="dk-signin-box" id="dk-signin-box">
+						<div class="box-head-sec">
+							<a href="index.html">
+								<img src="img/systemPics/kardo-icon.png"/>
+								<div class="header">Kardo</div>
+							</a>
+							<div class="back-btn"><a href="index.html"><i class="fa fa-chevron-left"></i></a></div>
+						</div>
+						<div class="user-info" style="display:none;">
+							<div class="text">DogusKar</div>
+							<img src="img/systemPics/user.png"/>
+						</div>
+						<div class="box-content-sec">
+							<div class="box-content-login">
+								<div class="warnings">
+									<!--<div class="dk-alert-style-2 bg-success" id="dk-alert-1">
+										<p><strong>Best check</strong> yo self, you're not looking too good...</p>
+									</div>
+									<div class="dk-alert-style-2 bg-danger" id="dk-alert-1">
+										<p><strong>Best check</strong> yo self, you're not looking too good...</p>
+									</div>-->
+								</div>
+								<div id="login_form">
+									<div class="login-steps active" id="login-step-1">
+										<form action="post" id="login-step-1-form" >
+											<div class="header">Giriş Yap</div>
+											<div class="regex_group" id="login-step-1_RegEx">
+												<div id="user_name_RegEx">
+													<div class="input-effect">
+														<input type="text" name="user_name" id="user_name" placeholder="" class="input-effect-1 dk-regex" data-null="false" data-regex_group="login-step-1_RegEx"/>
+														<label>Kullanıcı Adı, E-posta</label>
+														<span class="focus-border"></span>
+													</div>
+												</div>
+												<input type="button" value="İlerle" class="dk-btn dk-btn-wide dk-btn-primary regex-group-btn disabled" disabled/>
+											</div>
+										</form>
+										<div class="header">Kayıtlı Hesaplar</div>
+										<div class="other-accounts">
+											<div class="accounts-item">
+												<a href="#">
+													<img src="img/systemPics/kardo-icon.png" alt="" />
+													<div class="user-rname">Kardo</div>
+													<div class="username">@Kardo</div>
+												</a>
+											</div>
+											<div class="accounts-item">
+												<a href="#">
+													<img src="img/systemPics/kardo-icon.png" alt="" />
+													<div class="user-rname">Kardo</div>
+													<div class="username">@Kardo</div>
+												</a>
+											</div>
+											<div class="accounts-item">
+												<a href="#">
+													<img src="img/systemPics/kardo-icon.png" alt="" />
+													<div class="user-rname">Kardo</div>
+													<div class="username">@Kardo</div>
+												</a>
+											</div>
+											<div class="accounts-item">
+												<a href="#">
+													<img src="img/systemPics/kardo-icon.png" alt="" />
+													<div class="user-rname">Kardo</div>
+													<div class="username">@Kardo</div>
+												</a>
+											</div>
+										</div>
+									</div>
+									<form action="post" id="login-step-2-form" >
+										<div class="login-steps passive" id="login-step-2">
+											<div class="header">Parola Girin</div>
+											<div class="regex_group" id="login-step-2_RegEx">
+												<div id="password_RegEx">
+													<div class="input-effect">
+														<input type="password" name="password" placeholder="" class="input-effect-1 dk-regex" data-null="false" data-regex_group="login-step-2_RegEx"/>
+														<label>Parola</label>
+														<span class="focus-border"></span>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-6 pad-r-5"><input type="submit" value="Geri" class="dk-btn dk-btn-wide dk-btn-default " /></div>
+													<div class="col-xs-6 pad-l-5"><input type="submit" value="Giriş Yap" class="dk-btn dk-btn-wide dk-btn-primary regex-group-btn disabled" disabled/></div>
+												</div>
+												<label class="dk-cbox mar-t-10">
+													<input type="checkbox" name="remember_me"/>
+													<span class="dk-cbox">
+														<span></span>
+													</span>
+													<span class="text">Oturumu Açık Bırak</span>
+												</label>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							
+							
+							<!--
+								<div id="register_form">
+								<div class="box-content-register mar-t-10">
+									<div class="register-steps passive" id="register-step-1">
+											<div class="header">Hesap Oluştur</div>
+											<div class="text">Kardo hesabınız size avantajlı bir dünyanın kapılarını açar.</div>
+											<div class="regex_group" id="register-step-1_RegEx">
+												<div id="r_user_name_RegEx">
+													<div class="input-effect">
+														<input type="text" name="r_user_name" id="r_user_name" placeholder="" class="input-effect-2 dk-regex" data-regex_type="username" data-regex_group="register-step-1_RegEx"/>
+														<label>Kullanıcı Adı</label>
+														<span class="focus-border"></span>
+													</div>
+												</div>
+												<div id="r_eposta_RegEx">
+													<div class="input-effect">
+														<input type="text" name="r_eposta" id="r_eposta" placeholder="" class="input-effect-2 dk-regex" data-regex_type="email" data-regex_group="register-step-1_RegEx"/>
+														<label>E-Posta</label>
+														<span class="focus-border"></span>
+													</div>
+												</div>
+												<div id="r_password_RegEx">
+													<div class="input-effect">
+														<input type="password" name="r_password" id="r_password" placeholder="" class="input-effect-2 dk-regex" data-regex_type="password" data-regex_group="register-step-1_RegEx"/>
+														<label>Şifre</label>
+														<span class="focus-border"></span>
+													</div>
+												</div>
+												<input type="button" value="İlerle" id="register-step-1-btn" class="dk-btn dk-btn-wide dk-btn-primary regex-group-btn disabled" disabled/>
+											</div>
+											<div class="text warning"><b>İleri</b>'yi seçtiğinizde, <a href="#">Kardo Hizmet Sözleşmesi</a>'ni ve <a href="#">gizlilik ve tanımlama bilgileri bildirimini</a> kabul etmiş olursunuz.</div>
+									</div>
+									<div class="register-steps passive" id="<register-step-2></register-step-2>">
+										<div class="header">Ayrıntıları Ekle</div>
+										<div class="text">Hesap kurulumunuzu tamamlamak için biraz daha bilgiye ihtiyacımız var.</div>
+										<div class="regex_group" id="register-step-2_RegEx">
+											<div id="r_rname_RegEx">
+												<div class="input-effect">
+													<input type="text" name="r_rname" id="r_rname" placeholder="" class="input-effect-2 dk-regex" data-regex_type="letters" data-regex_group="register-step-2_RegEx"/>
+													<label>Adınız</label>
+													<span class="focus-border"></span>
+												</div>
+											</div>
+											<div id="r_surname_RegEx">
+												<div class="input-effect">
+													<input type="text" name="r_surname" id="r_surname" placeholder="" class="input-effect-2 dk-regex" data-regex_type="letters" data-regex_group="register-step-2_RegEx"/>
+													<label>Soyadınız</label>
+													<span class="focus-border"></span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6 pad-r-5"><input type="button" id="register-step-2-btn-back"  value="Geri" class="dk-btn dk-btn-wide dk-btn-default back" /></div>
+												<div class="col-xs-6 pad-l-5"><input type="button" id="register-step-2-btn"  value="İlerle" class="dk-btn dk-btn-wide dk-btn-primary regex-group-btn disabled" disabled/></div>
+											</div>
+										</div>
+									</div>
+									<div class="register-steps active" id="register-step-3">
+										<div class="header">Ayrıntıları Ekle</div>
+										<div class="text">Hesap kurulumunuzu tamamlamak için biraz daha bilgiye ihtiyacımız var.</div>
+										<label>Doğum Tarihiniz</label>
+										<div class="row">
+											<div class="col-xs-4 pad-r-5">
+												<select name="r_day" id="r_day">
+													<option value="1">1</option>
+												</select>
+											</div>
+											<div class="col-xs-4 pad-l-5 pad-r-5">
+												<select name="r_month" id="r_month">
+													<option value="1">1</option>
+												</select>
+											</div>
+											<div class="col-xs-4 pad-l-5">
+												<select name="r_year" id="r_year">
+													<option value="1">1</option>
+												</select>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6 pad-r-5"><input type="button" id="register-step-3-btn-back" value="Geri" class="dk-btn dk-btn-wide dk-btn-default back" /></div>
+											<div class="col-xs-6 pad-l-5"><input type="button" id="register-step-3-btn" value="Kayıdı Tamamla" class="dk-btn dk-btn-wide dk-btn-primary regex-group-btn"/></div>
+										</div>
+									</div>
+									<div class="register-steps passive" id="register-step-4">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="out-of-middle">
+													<div class="middle">
+														<div class="txt-align-c">
+															<div class="header">Kayıdınızı Başarıyla Tamamladınız!</div>
+															<img src="img/systemPics/checkIcon2.gif" alt="checkIcon" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<a href="/Login/Index" class="dk-btn dk-btn-wide dk-btn-primary">Giriş Yap</a>
+												<a href="/Login/popupIndex" class="dk-btn dk-btn-wide dk-btn-primary">Giriş Yap</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>-->
+							
+						</div>
+						<div class="box-footer-sec">
+							<div class="font-s-12">
+								<span>Hesabınız yok mu? </span>
+								<a href="javascript:;" id="register_link">Bir hesap oluştur!</a>
+							</div>
+							<div class="font-s-12">
+								<span>Şifreni mi unuttun? </span>
+								<a href="javascript:;">Şifreni sıfırla!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+			<footer class="footer-section login-page">
+				<ul>
+					<li>©2018 Kardo</li>
+					<li>©2018 Kardo2</li>
+					<li><a href="#">©2018 Kardo3</a></li>
+				</ul>
+			</footer>
+		
+		</div>
+		
+		
+		<script type='text/javascript' src='assets/jquery/jquery-3.2.1.min.js'></script>
+		<script src="assets/nicescroll/js/jquery.nicescroll.min.js"></script>
+		<script src="assets/nicescroll/js/nicescroll-settings.js"></script>
+        <script src="assets/dk-style/js/register-box.js"></script>
+        <script src="assets/dk-style/js/dk-regex.js"></script>
+        <script src="assets/dk-style/js/input-effect.js"></script>
+        
+	
+	</body>
+</html>

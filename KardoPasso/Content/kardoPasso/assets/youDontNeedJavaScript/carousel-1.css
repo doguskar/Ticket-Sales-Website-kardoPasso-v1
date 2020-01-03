@@ -1,0 +1,122 @@
+/* CSS styles for the carouselYDNJS */
+.carouselYDNJS {
+	position: relative;
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+	background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); /*linear-gradient(to right, #1e1e1e, #1980da, #1e1e1e);*/
+	padding-bottom:15px;
+}
+
+.carouselYDNJS-inner {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.carouselYDNJS-open:checked + .carouselYDNJS-item {
+	position: static;
+	opacity: 100;
+}
+
+.carouselYDNJS-item {
+	position: absolute;
+	opacity: 0;
+	-webkit-transition: opacity 0.6s ease-out;
+	transition: opacity 0.6s ease-out;
+}
+
+.carouselYDNJS-item img {
+	display: block;
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+}
+
+.carouselYDNJS-control {
+	background: rgba(0, 0, 0, 0.28);
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	display: none;
+	font-size: 40px;
+	height: 40px;
+	line-height: 31px;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(0, -50%);
+	cursor: pointer;
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	text-align: center;
+	width: 40px;
+	z-index: 10;
+}
+
+.carouselYDNJS-control.prev {
+	left: 2%;
+}
+
+.carouselYDNJS-control.next {
+	right: 2%;
+}
+
+.carouselYDNJS-control:hover {
+	background: rgba(0, 0, 0, 0.8);
+	color: #aaaaaa;
+}
+
+#carouselYDNJS-1:checked ~ .control-1,
+#carouselYDNJS-2:checked ~ .control-2,
+#carouselYDNJS-3:checked ~ .control-3,
+#carouselYDNJS-4:checked ~ .control-4,
+#carouselYDNJS-5:checked ~ .control-5 {
+	display: block;
+}
+
+.carouselYDNJS-indicators {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 2%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 10;
+}
+
+.carouselYDNJS-indicators li {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.carouselYDNJS-bullet {
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-size: 35px;
+}
+
+.carouselYDNJS-bullet:hover {
+	color: #aaaaaa;
+}
+
+#carouselYDNJS-1:checked ~ .control-1 ~ .carouselYDNJS-indicators li:nth-child(1) .carouselYDNJS-bullet,
+#carouselYDNJS-2:checked ~ .control-2 ~ .carouselYDNJS-indicators li:nth-child(2) .carouselYDNJS-bullet,
+#carouselYDNJS-3:checked ~ .control-3 ~ .carouselYDNJS-indicators li:nth-child(3) .carouselYDNJS-bullet,
+#carouselYDNJS-4:checked ~ .control-4 ~ .carouselYDNJS-indicators li:nth-child(4) .carouselYDNJS-bullet,
+#carouselYDNJS-5:checked ~ .control-5 ~ .carouselYDNJS-indicators li:nth-child(5) .carouselYDNJS-bullet {
+	color: #428bca;
+}
+
+#title {
+	width: 100%;
+	position: absolute;
+	padding: 0px;
+	margin: 0px auto;
+	text-align: center;
+	font-size: 27px;
+	color: rgba(255, 255, 255, 1);
+	font-family: 'Open Sans', sans-serif;
+	z-index: 9999;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}

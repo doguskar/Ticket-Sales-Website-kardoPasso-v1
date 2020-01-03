@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title>TITLE</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/systemPics/kardo-icon.png" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css">
+        <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="assets/datatables/media/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-style/css/dk-style.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-diagrams/css/diagrams-style.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-diagrams/css/uml-java.css">
+		<link rel="stylesheet" type="text/css" href="css/kardo.css">
+		
+		
+        <link rel="stylesheet" type="text/css" href="assets/simplepicker-master/css/simplepicker.css">
+		
+        <link rel="stylesheet" type="text/css" href="assets/youDontNeedJavaScript/carousel-1.css">
+		<link rel="stylesheet" type="text/css" href="css/kardoPasso.css">
+		
+		<style type="text/css">
+			
+			.kardoPasso-content{
+				max-width:2000px;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<div class="dk-container">
+			<div id="resultForDisplayChanging"></div>
+			<!-- DK-TOP-SECTION -->
+			<header class="dk-top-section">
+				
+				<div class="navbar-icon sidebar-close"><i class="fa fa-bars"></i></div>
+				
+				<div class="kardo-logo">
+					<a href="index.html"><img src="img/systemPics/kardo.png" alt="Kardo" class="hidden-xs"/>
+					<img src="img/systemPics/kardo-k.png" alt="Kardo" class="hidden-lg hidden-md hidden-sm small"/>
+					<span class="logo-sub">DkStyle</span></a>
+				</div>
+				
+				<div class="log-section">
+					<!--<span class="btn-log hidden-xs open-dk-popup" data-id="dk-popup-login"><a href="javascript:;">Oturum Aç</a></span>-->
+					
+					<div class="log-nav hidden-xs">
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-apps-box">
+							<span class="dk-icon"><i class="fa fa-ellipsis-v"></i></span>
+						</span>
+					</div>
+					<span class="cursor-p hidden-xs dk-dropdown" data-dropdown="dk-user-box">	<img src="img/systemPics/kardo-icon.png" alt="" />		</span>
+					<a href="#" class="hidden-lg hidden-md hidden-sm">	<img src="img/systemPics/kardo-icon.png" alt="" />		</a> 
+				</div>
+				
+				<!-- dk-apps-box -->
+				<div id="dk-apps-box" class="dk-apps-box hidden-xs">
+					<div class="aplications">
+						<div class="aplications-links">
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+						</div>
+					</div>
+					<a href="#" class="all-app">Daha Fazlası</a>
+				</div>
+				<!-- dk-user-box -->
+				<div id="dk-user-box" class="dk-user-box hidden-xs">
+					<div class="active-account">
+						<div class="user-photo">
+							<img src="img/systemPics/kardo-icon.png" alt="" />
+							<a href="#">Fotorafı Değiştir</a>
+						</div>
+						<div class="user-info">
+							<div class="user-rname">Kardo</div>
+							<div class="username">@Kardo</div>
+							<div class="user-profil-link"><a href="#" class="dk-btn dk-btn-primary">Profile Git</a></div>
+						</div>
+						<div class="clear-both"></div>
+					</div>
+					<div class="other-accounts">
+						<div class="accounts-item">
+							<a href="#">
+								<img src="img/systemPics/kardo-icon.png" alt="" />
+								<div class="user-rname">Kardo</div>
+								<div class="username">@Kardo</div>
+							</a>
+						</div>
+					</div>
+					<div class="dk-user-box-log">
+						<div class="row margin-0">
+							<div class="col-xs-6 pad-l-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Hesap Ekle</a></div>
+							<div class="col-xs-6 pad-r-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Oturumu Kapat</a></div>
+						</div>
+					</div>
+				</div>
+				<nav class="menu-horizontal hidden-sm hidden-xs">
+					<ul>
+						<li><a href="index.html">Anasayfa</a></li>
+						<li><a href="#">Openable</a>
+							<ul>
+								<li><a href="#">Sub Item 1</a></li>
+								<li><a href="#">Sub Item 2</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</nav>
+							
+				<div class="clear-both"></div>
+			</header>
+			
+				
+		<!-- DK-TOP-SECTION END -->
+		<!--- sidebar-menu -->
+			<nav class="menu-section" id="accordion">
+				<div class="dk-sidebar-menu-close sidebar-close" id="dk-sidebar-menu-close" style="left:-100%;" ></div>
+				
+				<div class="dk-sidebar-menu sidebar-dark-theme" id="dk-sidebar-menu" style="left:-320px;">
+					<!--- logo section --->
+					<span id="dk-sidebar-menu-off-fixed" class="dk-sidebar-menu-off-fixed" onClick=""><i class="fa fa-thumb-tack"></i></span>
+					<div class="dk-sidebar-menu-off">
+						<a href="index.html"><img src="img/systemPics/kardo.png"/><span class="logo-sub">DkStyle</span></a>
+						<span class="dk-sidebar-menu-off-close sidebar-close"><i class="fa fa-chevron-left"></i></span>
+						<div class="clear-both"></div>
+					</div>
+					<!--- log-off / log-on --->
+					<div class="dk-sidebar-menu-log">
+						<div class="dk-sidebar-menu-log-on">
+							<a href="login.html"><i class="fa fa-user mar-r-10"></i>OTURUM AÇ</a>
+						</div>
+						<!--<div class="dk-sidebar-menu-log-off">
+							<a href="#">
+								<img src="img/systemPics/kardo-icon.png" alt="" />
+								<span>Doğuş Kar</span>
+							</a>
+						</div>-->
+					</div>
+					
+					<!--- menu --->
+					<ul id="dk-accordion-menu">
+						<li class="dk-sidebar-menu-header">
+								<a href="#" class="header">Header</a>
+						</li>
+						<li class="dk-sidebar-menu-item active">
+							<a href="index.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-home" ></i>
+								<span class="dk-sidebar-menu-item-title">HomePage</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-book" ></i>
+								<span class="dk-sidebar-menu-item-title">UI Elements</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="general.html">General</a></li>
+								<li><a href="buttons.html">Buttons</a></li>
+								<li><a href="widgets.html">Widgets</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-tasks" ></i>
+								<span class="dk-sidebar-menu-item-title">Form Stuff</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="form-components.html">Form Components</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="tables.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-table" ></i>
+								<span class="dk-sidebar-menu-item-title">Tables</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="mailbox.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-commenting-o" ></i>
+								<span class="dk-sidebar-menu-item-title">Mailbox</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-plus" ></i>
+								<span class="dk-sidebar-menu-item-title">Extra</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="404.html">404 Error</a></li>
+								<li><a href="500.html">500 Error</a></li>
+							</ul>
+						</li>
+					</ul>
+					
+					<!--- social sites --->
+					<div class="dk-sidebar-menu-social">
+						<a href="https://www.facebook.com/kardo.official/" target="blank"><i class="fa fa-facebook-official"></i></a>
+						<a href="https://twitter.com/KardoOfficial" target="blank"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/kardo.official/" target="blank"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.youtube.com/doguskar" target="blank"><i class="fa fa-youtube"></i></a>
+					</div>
+					<div class="dk-sidebar-menu-footer">
+						<img src="img/systemPics/kardo.png" alt="" />
+						<span class="cursor-d">Kopyalanamaz © 2017</span>
+					</div>
+					
+				</div>
+			</nav>
+			<!--- sidebar-menu end -->
+			<article class="content-section col-xs-12" id="content-section">
+				<div class="kardoPasso-content">
+					<div class="shortcuts-menu">
+						<nav>
+							<ul>
+								<li><a href="javascript:;" class="open-dk-popup" data-id="addRolePopup">Add Role</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 pad-l-15 pad-r-15">
+							<div class="dk-table-container">
+								<h1>Roles</h1>
+								<table class="dk-table" id="permissionsTable">
+									<thead>
+										<tr>
+											<th><span>Role Name</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+											<th><span>can_enter_adminPanel</span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>admin</td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>admin</td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>admin</td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>admin</td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>admin</td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>admin</td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>admin</td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+											<td><input type="checkbox" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+			<div id="addRolePopup" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup bg-primary" data-id="addRolePopup">
+						<div class="title">
+							<span class="text">Add Role</span>
+							<span class="popup-close close-dk-popup" data-id="addRolePopup"><i class="fa fa-times"></i></span>
+						</div>
+						<form action="" id="addRole_form" method="post" enctype="from-data">
+							<div class="content">
+								<div class="row">
+									<div class="col-xs-12">
+										<div id="addRole_warning" class="clr-danger">asdasd</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<label for="addRole_name">Role Name:</label><br />
+										<input type="text" id="addRole_name" />
+									</div>
+								</div>
+							</div>
+							<div class="footer">
+								<input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addRolePopup" value="Cancel"/>
+								<input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addRolePopup" value="Save"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="clear-both"></div>
+			<footer class="footer-section dk-footer-sec" id="footer-section">
+				<div class="row margin-0">
+					<div class="col-md-2 hidden-xs"></div>
+						<div class="col-md-4 col-xs-12">
+							<a href="#"><img src="img/systemPics/kardo.png" alt="Kardo"/></a>
+							<div>Kopyalanamaz © Tasarım ve Kodlama: <a href="#" >Doğuş Kar</a></div>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<div class="row">
+								<div class="col-xs-6 footer-links">
+									<h1>Header</h1>
+									<ul>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-6 footer-links">
+									<h1>Header</h1>
+									<ul>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					<div class="col-md-2  hidden-xs"></div>
+				</div>
+			</footer>
+		
+		</div>
+		
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type='text/javascript' src='assets/jquery/jquery-3.2.1.min.js'></script>
+		<script src="assets/jquery-ui/js/jquery-ui.min.js"></script><!--For Draggable-->
+		<script src="assets/bootstrap/js/bootstrap.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-settings.js"></script>
+		<script src="assets/dcjqaccordion/jquery.dcjqaccordion.2.7.min.js"></script>
+		<script src="assets/dcjqaccordion/dcjqaccordion-settings.js"></script>
+		<script src="assets/nicescroll/js/jquery.nicescroll.min.js"></script>
+		<script src="assets/js.cookie/js.cookie.js"></script>
+		<script src="assets/nicescroll/js/nicescroll-settings.js"></script>
+		<script src="assets/datatables/media/js/jquery.dataTables.min.js"></script>
+		<script src="assets/datatables/media/js/jquery.dataTables-settings.js"></script>
+        <script src="assets/dk-style/js/dk-javascript.js"></script>
+        <script src="assets/dk-style/js/dk-sidebar.js"></script>
+        <script src="assets/dk-style/js/dynamic-popup.js"></script>
+        <script src="assets/dk-style/js/dk-regex.js"></script>
+        
+		<script src="assets/count/count.js"></script>
+		<script src="assets/gritter/js/jquery.gritter.min.js"></script>
+		<script src="assets/gritter/js/gritter-settings.js"></script>
+		
+		<!---->
+			<script src="assets\dk-diagrams\js\ddp.js"></script>
+			<script src="assets\dk-diagrams\js\diagrams.js"></script>
+			
+			<script type="text/javascript">
+			$(document).ready(function() {
+				$('#permissionsTable').DataTable( {
+					"lengthMenu": [[10, 20, 50, -1], [10, 20, 50, "All"]]
+				} );
+			} );
+		</script>
+		<!---->
+	</body>
+</html>

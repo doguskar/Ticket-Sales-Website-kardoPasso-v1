@@ -1,0 +1,1255 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title>TITLE</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/systemPics/kardo-icon.png" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css">
+        <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="assets/datatables/media/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-style/css/dk-style.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-diagrams/css/diagrams-style.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-diagrams/css/uml-java.css">
+		<link rel="stylesheet" type="text/css" href="css/kardo.css">
+		
+		
+        <link rel="stylesheet" type="text/css" href="assets/simplepicker-master/css/simplepicker.css">
+		
+        <link rel="stylesheet" type="text/css" href="assets/youDontNeedJavaScript/carousel-1.css">
+		<link rel="stylesheet" type="text/css" href="css/kardoPasso.css">
+		
+		<style type="text/css">
+			html {
+			  scroll-behavior: smooth;
+			}
+			.kardoPasso-content .row{
+				padding-top:20px;
+				padding-bottom:20px;
+			}
+		</style>
+		
+	</head>
+
+	<body id="topOfPage">
+		<div class="dk-container">
+			<div id="resultForDisplayChanging"></div>
+			<!-- DK-TOP-SECTION -->
+			<header class="dk-top-section">
+				
+				<div class="navbar-icon sidebar-close"><i class="fa fa-bars"></i></div>
+				
+				<div class="kardo-logo">
+					<a href="index.html"><img src="img/systemPics/kardo.png" alt="Kardo" class="hidden-xs"/>
+					<img src="img/systemPics/kardo-k.png" alt="Kardo" class="hidden-lg hidden-md hidden-sm small"/>
+					<span class="logo-sub">DkStyle</span></a>
+				</div>
+				
+				<div class="log-section">
+					<!--<span class="btn-log hidden-xs open-dk-popup" data-id="dk-popup-login"><a href="javascript:;">Oturum Aç</a></span>-->
+					
+					<div class="log-nav hidden-xs">
+						<span class="dk-dropdown-btn search-box-btn" >
+							<span class="dk-icon"><i class="fa fa-search" data-id="search-box-wide"></i></span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-messages-box">
+							<span class="dk-icon"><i class="fa fa-envelope"></i></span>
+							<span class="dk-badge bg-danger">2</span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-notification-box">
+							<span class="dk-icon"><i class="fa fa-bell"></i></span>
+							<span class="dk-badge bg-danger">2</span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-apps-box">
+							<span class="dk-icon"><i class="fa fa-ellipsis-v"></i></span>
+						</span>
+					</div>
+					<span class="cursor-p hidden-xs dk-dropdown" data-dropdown="dk-user-box">	<img src="img/systemPics/kardo-icon.png" alt="" />		</span>
+					<a href="#" class="hidden-lg hidden-md hidden-sm">	<img src="img/systemPics/kardo-icon.png" alt="" />		</a> 
+				</div>
+				
+				<!-- dk-apps-box -->
+				<div id="dk-apps-box" class="dk-apps-box hidden-xs">
+					<div class="aplications">
+						<div class="aplications-links">
+							<a href="colors.html"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Colors</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+						</div>
+					</div>
+					<a href="#" class="all-app">Daha Fazlası</a>
+				</div>
+				<!-- dk-user-box -->
+				<div id="dk-user-box" class="dk-user-box hidden-xs">
+					<div class="active-account">
+						<div class="user-photo">
+							<img src="img/systemPics/kardo-icon.png" alt="" />
+							<a href="#">Fotorafı Değiştir</a>
+						</div>
+						<div class="user-info">
+							<div class="user-rname">Kardo</div>
+							<div class="username">@Kardo</div>
+							<div class="user-profil-link"><a href="#" class="dk-btn dk-btn-primary">Profile Git</a></div>
+						</div>
+						<div class="clear-both"></div>
+					</div>
+					<div class="other-accounts">
+						<div class="accounts-item">
+							<a href="#">
+								<img src="img/systemPics/kardo-icon.png" alt="" />
+								<div class="user-rname">Kardo</div>
+								<div class="username">@Kardo</div>
+							</a>
+						</div>
+					</div>
+					<div class="dk-user-box-log">
+						<div class="row margin-0">
+							<div class="col-xs-6 pad-l-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Hesap Ekle</a></div>
+							<div class="col-xs-6 pad-r-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Oturumu Kapat</a></div>
+						</div>
+					</div>
+				</div>
+				<!-- dk-notification-box -->
+				<div id="dk-notification-box" class="dk-notification-box hidden-xs">
+					<div class="notifications-links">
+						<div class="dk-notification-box-h"><img src="img/systemPics/kardo.png" alt="" /></div>
+						<a href="#"><div class="notifications-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link unread">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+					</div>
+					<a href="#" class="all-noti">Tümünü Gör</a>
+				</div>
+				<!--dk-messages-box-->
+				<div id="dk-messages-box" class="dk-messages-box hidden-xs">
+					<div class="dk-message-box-h">Mesajlar(2)</div>
+					<div class="messages-links">
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link unread">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/systemPics/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+					</div>
+					<a href="#" class="all-messages">Tümünü Gör</a>
+				</div>
+				<!--search-box-wide-->
+				<div id="search-box-wide" class="search-box-wide">
+					<form method="post">
+						<input type="text" placeholder="Aradığınız Kelimeyi yazınız.."/>
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+				
+				<nav class="menu-horizontal hidden-sm hidden-xs">
+					<ul>
+						<li><a href="index.html">Anasayfa</a></li>
+						<li><a href="#">Openable</a>
+							<ul>
+								<li><a href="#">Sub Item 1</a></li>
+								<li><a href="#">Sub Item 2</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</nav>
+							
+				<div class="clear-both"></div>
+			</header>
+			
+				
+		<!-- DK-TOP-SECTION END -->
+		<!--- sidebar-menu -->
+			<nav class="menu-section" id="accordion">
+				<div class="dk-sidebar-menu-close sidebar-close" id="dk-sidebar-menu-close" style="left:-100%;" ></div>
+				
+				<div class="dk-sidebar-menu sidebar-dark-theme" id="dk-sidebar-menu" style="left:-320px;">
+					<!--- logo section --->
+					<span id="dk-sidebar-menu-off-fixed" class="dk-sidebar-menu-off-fixed" onClick=""><i class="fa fa-thumb-tack"></i></span>
+					<div class="dk-sidebar-menu-off">
+						<a href="index.html"><img src="img/systemPics/kardo.png"/><span class="logo-sub">DkStyle</span></a>
+						<span class="dk-sidebar-menu-off-close sidebar-close"><i class="fa fa-chevron-left"></i></span>
+						<div class="clear-both"></div>
+					</div>
+					<!--- log-off / log-on --->
+					<div class="dk-sidebar-menu-log">
+						<div class="dk-sidebar-menu-log-on">
+							<a href="login.html"><i class="fa fa-user mar-r-10"></i>OTURUM AÇ</a>
+						</div>
+						<!--<div class="dk-sidebar-menu-log-off">
+							<a href="#">
+								<img src="img/systemPics/kardo-icon.png" alt="" />
+								<span>Doğuş Kar</span>
+							</a>
+						</div>-->
+					</div>
+					
+					<!--- menu --->
+					<ul id="dk-accordion-menu">
+						<li class="dk-sidebar-menu-header">
+								<a href="#" class="header">Header</a>
+						</li>
+						<li class="dk-sidebar-menu-item active">
+							<a href="index.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-home" ></i>
+								<span class="dk-sidebar-menu-item-title">HomePage</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-book" ></i>
+								<span class="dk-sidebar-menu-item-title">UI Elements</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="general.html">General</a></li>
+								<li><a href="buttons.html">Buttons</a></li>
+								<li><a href="widgets.html">Widgets</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-tasks" ></i>
+								<span class="dk-sidebar-menu-item-title">Form Stuff</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="form-components.html">Form Components</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="tables.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-table" ></i>
+								<span class="dk-sidebar-menu-item-title">Tables</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="mailbox.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-commenting-o" ></i>
+								<span class="dk-sidebar-menu-item-title">Mailbox</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-plus" ></i>
+								<span class="dk-sidebar-menu-item-title">Extra</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="404.html">404 Error</a></li>
+								<li><a href="500.html">500 Error</a></li>
+							</ul>
+						</li>
+					</ul>
+					
+					<!--- social sites --->
+					<div class="dk-sidebar-menu-social">
+						<a href="https://www.facebook.com/kardo.official/" target="blank"><i class="fa fa-facebook-official"></i></a>
+						<a href="https://twitter.com/KardoOfficial" target="blank"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/kardo.official/" target="blank"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.youtube.com/doguskar" target="blank"><i class="fa fa-youtube"></i></a>
+					</div>
+					<div class="dk-sidebar-menu-footer">
+						<img src="img/systemPics/kardo.png" alt="" />
+						<span class="cursor-d">Kopyalanamaz © 2017</span>
+					</div>
+					
+				</div>
+			</nav>
+			<!--- sidebar-menu end -->
+			<article class="content-section col-sm-12" id="content-section">
+				<div class="kardoPasso-content">
+					<div class="shortcuts-menu">
+						<nav>
+							<ul>
+								<li><a href="#statistics">Statistics</a></li>
+								<li><a href="javascript:;" class="open-dk-popup" data-id="addEventPopup">Add Event</a></li>
+								<li><a href="#eventsTableContainer">Events</a></li>
+								<li><a href="javascript:;" class="open-dk-popup" data-id="addStadiumPopup">Add Stadium</a></li>
+								<li><a href="#stadiumsTableContainer">Stadiums</a></li>
+								<li><a href="javascript:;" class="open-dk-popup" data-id="addTeamPopup">Add Team</a></li>
+								<li><a href="#teamsTableContainer">Teams</a></li>
+								<li><a href="javascript:;" class="open-dk-popup" data-id="addSportTypePopup">Add Sport Type</a></li>
+								<li><a href="#sportTypesTableContainer">Sport Types</a></li>
+								<li><a href="#usersTableContainer">Users</a></li>
+								<li><a href="kardoPasso_editPermissions.html">Edit Permissions</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<section class="dk-widget-box countUp" data-count="500" data-id="count-1">
+								<div class="dk-widget-logo"><i class="fa fa-user"></i></div>
+								<div class="dk-widget-content">
+									<span class="count" id="count-1">0</span>
+									<span class="info">New members in the last year</span>
+								</div>
+							</section>
+						</div>
+						<div class="col-xs-6">
+							<section class="dk-widget-box bg-primary countUp" data-count="500" data-id="count-2">
+								<div class="dk-widget-logo"><i class="fa fa-id-card"></i></div>
+								<div class="dk-widget-content">
+									<span class="count" id="count-2">0</span>
+									<span class="info">Number of people purchased kardoPasso in the last year</span>
+								</div>
+							</section>
+						</div>
+					</div>
+					<h1 id="statistics">Statistics</h1>
+					<div class="row">
+						<div class="col-md-6">
+							<div id="HC_topTeams" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+						</div>
+						<div class="col-md-6">
+							<div id="HC_topEvents" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div id="HC_topStadiums" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+						</div>
+						<div class="col-md-7">
+							<div id="HC_numOfEvents" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+						</div>
+					</div>
+					<h1>Tables</h1>
+					<div class="row" id="eventsTableContainer">
+						<div class="col-xs-12 pad-l-15 pad-r-15">
+							<div class="dk-table-container">
+								<h1>Events</h1>
+								<table class="dk-table" id="eventsTable">
+									<thead>
+										<tr>
+											<th>Teams</th>
+											<th>Time</th>
+											<th>Where</th>
+											<th>Left Ticket</th>
+											<th>Sold Ticket</th>
+											<th>Details</th>
+											<th>Edit</th>
+											<th>Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Beşiktaş - Fenerbahçe Fenerbahçe</td>
+											<td>2019-05-05 19:00</td>
+											<td>Vodefone Park</td>
+											<td>40.000</td>
+											<td>1.000</td>
+											<td><a href="kardoPasso_eventDetails.html"><i class="fa fa-info-circle"></i></a></td>
+											<td><a href="javascript:;" class="open-dk-popup" data-id="addEventPopup" data-update="true"><i class="fa fa-edit"></i></a></td>
+											<td><a href="javascript:;"><i class="fa fa-remove"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="row" id="usersTableContainer">
+						<div class="col-xs-12 pad-l-15 pad-r-15">
+							<div class="dk-table-container">
+								<h1>Users</h1>
+								<table class="dk-table" id="usersTable">
+									<thead>
+										<tr>
+											<th>Username</th>
+											<th>Name</th>
+											<th>Mail</th>
+											<th>Role</th>
+											<th>Balance</th>
+											<th>Total Tickets</th>
+											<th>Edit</th>
+											<th>Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>doguskar</td>
+											<td>Doğuş Kar</td>
+											<td>dogus.kar@hotmail.com</td>
+											<td>admin</td>
+											<td>40.000</td>
+											<td>1.000</td>
+											<td><a href="javascript:;" class="open-dk-popup" data-id="updateUserPopup"><i class="fa fa-edit"></i></a></td>
+											<td><a href="javascript:;"><i class="fa fa-remove"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="row" id="stadiumsTableContainer">
+						<div class="col-xs-12 pad-l-15 pad-r-15">
+							<div class="dk-table-container">
+								<h1>Stadiums</h1>
+								<table class="dk-table" id="stadiumsTable">
+									<thead>
+										<tr>
+											<th>Stadium</th>
+											<th>Country - City</th>
+											<th>Location</th>
+											<th>Number Of Its Sections</th>
+											<th>Capacity</th>
+											<th>Edit</th>
+											<th>Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Vodefone</td>
+											<td>Türkiye - İstanbul</td>
+											<td>41.039385, 28.994130</td>
+											<td>50</td>
+											<td>41.000</td>
+											<td><a href="kardoPasso_editStadium.html"><i class="fa fa-edit"></i></a></td>
+											<td><a href="javascript:;"><i class="fa fa-remove"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="row">
+						<div class="col-sm-6 pad-l-15 pad-r-15"  id="teamsTableContainer">
+							<div class="dk-table-container">
+								<h1>Teams</h1>
+								<table class="dk-table" id="teamsTable">
+									<thead>
+										<tr>
+											<th>Team</th>
+											<th>Sport Type</th>
+											<th>Edit</th>
+											<th>Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Beşiktaş</td>
+											<td>Football</td>
+											<td><a href="javascript:;" class="open-dk-popup" data-id="addTeamPopup" data-update="true"><i class="fa fa-edit"></i></a></td>
+											<td><a href="javascript:;"><i class="fa fa-remove"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-sm-6 pad-l-15 pad-r-15"  id="sportTypesTableContainer">
+							<div class="dk-table-container">
+								<h1>Sport Types</h1>
+								<table class="dk-table" id="sportTypesTable">
+									<thead>
+										<tr>
+											<th>Sport Type</th>
+											<th>Edit</th>
+											<th>Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Football</td>
+											<td><a href="javascript:;" class="open-dk-popup" data-id="addSportTypePopup" data-update="true"><i class="fa fa-edit"></i></a></td>
+											<td><a href="javascript:;"><i class="fa fa-remove"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				</div>
+				
+			</article>
+			<div id="addEventPopup" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup bg-primary" data-id="addEventPopup">
+						<div class="title">
+							<span class="text">Add Event</span>
+							<span class="popup-close close-dk-popup" data-id="addEventPopup"><i class="fa fa-times"></i></span>
+						</div>
+						<form action="" id="addEvent_form" method="post" enctype="from-data">
+							<div class="content">
+								<div class="row">
+									<div class="col-xs-12">
+										<div id="addEvent_warning" class="clr-danger">asdasd</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="addEvent_hostTeam">Host Team:</label><br />
+										<select name="" id="addEvent_hostTeam">
+											<option value="bjk">Beşiktaş</option>
+										</select>
+									</div>
+									<div class="col-xs-6">
+										<label for="addEvent_otherTeam">Other Team:</label><br />
+										<select name="" id="addEvent_otherTeam">
+											<option value="bjk">Beşiktaş</option>
+										</select>
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="addEvent_stadium">Stadium:</label><br />
+										<select name="" id="addEvent_stadium">
+											<option value="bjk">Vodefone</option>
+										</select>
+									</div>
+									<div class="col-xs-6">
+										<label for="addEvent_date">Date:</label><br />
+										<input type="button" id="addEvent_date" value="Click to Select"/>
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-xs-12">
+										<label for="addEvent_description">Description:</label><br />
+										<textarea name="" id="addEvent_description" cols="30" rows="10"></textarea>
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="addEvent_price">Min Ticket Price:</label><br />
+										<input type="number" id="addEvent_price"/>
+									</div>
+									<div class="col-xs-6">
+										<label for="addEvent_pic">Event Pic:</label><br />
+										<input type="file" id="addEvent_pic"/>
+									</div>
+								</div>
+							</div>
+							<div class="footer">
+								<input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addEventPopup" value="Cancel"/>
+								<input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addEventPopup" value="Save"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="addStadiumPopup" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup bg-primary" data-id="addStadiumPopup">
+						<div class="title">
+							<span class="text">Add Stadium</span>
+							<span class="popup-close close-dk-popup" data-id="addStadiumPopup"><i class="fa fa-times"></i></span>
+						</div>
+						<form action="" id="addStadium_form" method="post" enctype="from-data">
+							<div class="content">
+								<div class="row">
+									<div class="col-xs-12">
+										<div id="addStadium_warning" class="clr-danger">asdasd</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="addStadium_name">Stadium Name:</label><br />
+										<input type="text" id="addStadium_name" />
+									</div>
+									<div class="col-xs-6">
+										<label for="">Stadium Suitable For:</label><br />
+										<select name="" id="addStadium_sportType">
+											<option value="Football">Football</option>
+										</select>
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-xs-12">
+										<label for="addStadium_pic">Stadium Plan Pic:</label><br />
+										<input type="file" id="addStadium_pic"/>
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="addStadium_country">Country:</label><br />
+										<input type="text" id="addStadium_country" />
+									</div>
+									<div class="col-xs-6">
+										<label for="addStadium_state">State:</label><br />
+										<input type="text" id="addStadium_state" />
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="addStadium_city">City:</label><br />
+										<input type="text" id="addStadium_city" />
+									</div>
+									<div class="col-xs-6">
+										<label for="addStadium_location">Location:</label><br />
+										<input type="text" id="addStadium_location" />
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-xs-12">
+										<label for="addStadium_streetAdd">Street Address:</label><br />
+										<textarea name="" id="addStadium_streetAdd" cols="30" rows="10"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="footer">
+								<input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addStadiumPopup" value="Cancel"/>
+								<input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addStadiumPopup" value="Save"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="addTeamPopup" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup bg-primary" data-id="addTeamPopup">
+						<div class="title">
+							<span class="text">Add Team</span>
+							<span class="popup-close close-dk-popup" data-id="addTeamPopup"><i class="fa fa-times"></i></span>
+						</div>
+						<form action="" id="addTeam_form" method="post" enctype="from-data">
+							<div class="content">
+								<div class="row">
+									<div class="col-xs-12">
+										<div id="addTeam_warning" class="clr-danger">asdasd</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="addTeam_name">Team Name:</label><br />
+										<input type="text" id="addTeam_name" />
+									</div>
+									<div class="col-xs-6">
+										<label for="addTeam_sportType">Team Sport Type:</label><br />
+										<select name="" id="addTeam_sportType">
+											<option value="Football">Football</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="footer">
+								<input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addTeamPopup" value="Cancel"/>
+								<input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addTeamPopup" value="Save"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="addSportTypePopup" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup bg-primary" data-id="addSportTypePopup">
+						<div class="title">
+							<span class="text">Add Sport Type</span>
+							<span class="popup-close close-dk-popup" data-id="addSportTypePopup"><i class="fa fa-times"></i></span>
+						</div>
+						<form action="" id="addSportType_form" method="post" enctype="from-data">
+							<div class="content">
+								<div class="row">
+									<div class="col-xs-12">
+										<div id="addSportType_warning" class="clr-danger">asdasd</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<label for="addSportType_name">Sport Type Name:</label><br />
+										<input type="text" id="addSportType_name" />
+									</div>
+								</div>
+							</div>
+							<div class="footer">
+								<input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addSportTypePopup" value="Cancel"/>
+								<input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addSportTypePopup" value="Save"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="updateUserPopup" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup bg-primary" data-id="updateUserPopup">
+						<div class="title">
+							<span class="text">Update User</span>
+							<span class="popup-close close-dk-popup" data-id="updateUserPopup"><i class="fa fa-times"></i></span>
+						</div>
+						<form action="" id="updateUser_form" method="post" enctype="from-data">
+							<div class="content">
+								<div class="row">
+									<div class="col-xs-12">
+										<div id="updateUser_warning" class="clr-danger">asdasd</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<label for="updateUser_role">User Role:</label><br />
+										<select name="" id="updateUser_role">
+											<option value="admin">admin</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="footer">
+								<input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="updateUserPopup" value="Cancel"/>
+								<input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="updateUserPopup" value="Save"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="clear-both"></div>
+			<footer class="footer-section dk-footer-sec" id="footer-section">
+				<div class="row margin-0">
+					<div class="col-md-2 hidden-xs"></div>
+						<div class="col-md-4 col-xs-12">
+							<a href="#"><img src="img/systemPics/kardo.png" alt="Kardo"/></a>
+							<div>Kopyalanamaz © Tasarım ve Kodlama: <a href="#" >Doğuş Kar</a></div>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<div class="row">
+								<div class="col-xs-6 footer-links">
+									<h1>Header</h1>
+									<ul>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-6 footer-links">
+									<h1>Header</h1>
+									<ul>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+										<li><a href="#">Link</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					<div class="col-md-2  hidden-xs"></div>
+				</div>
+			</footer>
+			<a href="#topOfPage" id="go-top-of-page"><i class="fa fa-chevron-up"></i></a>
+		</div>
+		
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type='text/javascript' src='assets/jquery/jquery-3.2.1.min.js'></script>
+		<script src="assets/jquery-ui/js/jquery-ui.min.js"></script><!--For Draggable-->
+		<script src="assets/bootstrap/js/bootstrap.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-settings.js"></script>
+		<script src="assets/dcjqaccordion/jquery.dcjqaccordion.2.7.min.js"></script>
+		<script src="assets/dcjqaccordion/dcjqaccordion-settings.js"></script>
+		<script src="assets/js.cookie/js.cookie.js"></script>
+		<script src="assets/datatables/media/js/jquery.dataTables.min.js"></script>
+		<script src="assets/datatables/media/js/jquery.dataTables-settings.js"></script>
+        <script src="assets/dk-style/js/dk-javascript.js"></script>
+        <script src="assets/dk-style/js/dk-sidebar.js"></script>
+        <script src="assets/dk-style/js/dynamic-popup.js"></script>
+        <script src="assets/dk-style/js/dk-regex.js"></script>
+        
+		<script src="assets/count/count.js"></script>
+		<script src="assets/gritter/js/jquery.gritter.min.js"></script>
+		<script src="assets/gritter/js/gritter-settings.js"></script>
+		
+		
+			<script src="assets\simplepicker-master\js\simplepicker.js"></script>
+		
+		<script type="text/javascript">
+			let simplepicker = new SimplePicker({
+			  zIndex: 10000
+			});
+
+			document.getElementById("addEvent_date").addEventListener("click", (e) => {
+			  simplepicker.open();
+			  document.getElementsByClassName('simpilepicker-date-picker')[0].classList.toggle('addEvent_date')
+			});
+
+			simplepicker.on('submit', (date, readableDate) => {
+				document.getElementById("addEvent_date").value = readableDate;
+			});
+
+			/**********************************/
+			$(document).ready(function() {
+				$('#eventsTable').DataTable( {
+					"lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+				} );
+			} );
+			$(document).ready(function() {
+				$('#usersTable').DataTable( {
+					"lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+				} );
+			} );
+			$(document).ready(function() {
+				$('#stadiumsTable').DataTable( {
+					"lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+				} );
+			} );
+			$(document).ready(function() {
+				$('#teamsTable').DataTable( {
+					"lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+				} );
+			} );
+			$(document).ready(function() {
+				$('#sportTypesTable').DataTable( {
+					"lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+				} );
+			} );
+			
+			
+			$(".open-dk-popup").click(function(){
+				var update = $(this).data("update");debugger;
+				if(update != undefined && update){
+					alert();
+				}
+			})
+		</script>
+		
+		
+		
+		<script src="assets/highcharts-6.0.4/code/highcharts.js"></script>
+		<script src="assets/highcharts-6.0.4/code/modules/series-label.js"></script>
+		<script src="assets/highcharts-6.0.4/code/modules/exporting.js"></script>
+		<script src="assets/highcharts-6.0.4/code/modules/data.js"></script>
+        <script src="assets/highcharts-6.0.4/code/modules/drilldown.js"></script>
+		
+		<script type="text/javascript">
+			Highcharts.chart('HC_topTeams', {
+			  chart: {
+				type: 'bar'
+			  },
+			  title: {
+				text: 'Teams that its tickets were sold the most'
+			  },
+			  xAxis: {
+				categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+				title: {
+				  text: null
+				}
+			  },
+			  yAxis: {
+				min: 0,
+				title: {
+				  text: 'Total Number Of Tickets',
+				  align: 'high'
+				},
+				labels: {
+				  overflow: 'justify'
+				}
+			  },
+			  tooltip: {
+				valueSuffix: ' tickets'
+			  },
+			  plotOptions: {
+				bar: {
+				  dataLabels: {
+					enabled: true
+				  }
+				}
+			  },
+			  legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'top',
+				x: -40,
+				y: 80,
+				floating: true,
+				borderWidth: 1,
+				backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+				shadow: true
+			  },
+			  credits: {
+				enabled: false
+			  },
+			  series: [{
+				name: 'Total Number Of Tickets',
+				data: [107, 31, 635, 203, 2]
+			  }]
+			});
+		</script>
+		
+		<script type="text/javascript">
+			// Create the chart
+			Highcharts.chart('HC_numOfEvents', {
+			  chart: {
+				type: 'column'
+			  },
+			  title: {
+				text: 'Number Of Events by Years and Month'
+			  },
+			  subtitle: {
+				text: 'Click the columns to view number of events by month.'
+			  },
+			  xAxis: {
+				type: 'category'
+			  },
+			  yAxis: {
+				title: {
+				  text: 'Total number of events'
+				}
+
+			  },
+			  legend: {
+				enabled: false
+			  },
+			  plotOptions: {
+				series: {
+				  borderWidth: 0,
+				  dataLabels: {
+					enabled: true,
+					format: '{point.y}'
+				  }
+				}
+			  },
+
+			  tooltip: {
+				headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+				pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b><br/>'
+			  },
+
+			  series: [
+				{
+				  name: "Years",
+				  colorByPoint: true,
+				  data: [
+					{
+					  "name": "2019",
+					  "y": 100,
+					  "drilldown": "Y2019"
+					},
+					{
+					  "name": "2018",
+					  "y": 80,
+					  "drilldown": "Y2018"
+					}
+				  ]
+				}
+			  ],
+			  drilldown: {
+				series: [
+				  {
+					name: "Monhts",
+					id: "Y2019",
+					data: [
+					  [
+						"January",
+						100
+					  ],
+					  [
+						"February",
+						100
+					  ],
+					  [
+						"March",
+						100
+					  ],
+					  [
+						"April",
+						100
+					  ],
+					  [
+						"May",
+						100
+					  ],
+					  [
+						"June",
+						100
+					  ],
+					  [
+						"July",
+						100
+					  ],
+					  [
+						"August",
+						100
+					  ],
+					  [
+						"September",
+						100
+					  ],
+					  [
+						"October",
+						100
+					  ],
+					  [
+						"November",
+						100
+					  ],
+					  [
+						"December",
+						100
+					  ]
+					]
+				  },
+				  {
+					name: "Monhts",
+					id: "Y2018",
+					data: [
+					  [
+						"January",
+						100
+					  ],
+					  [
+						"February",
+						100
+					  ],
+					  [
+						"March",
+						100
+					  ],
+					  [
+						"April",
+						100
+					  ],
+					  [
+						"May",
+						100
+					  ],
+					  [
+						"June",
+						100
+					  ],
+					  [
+						"July",
+						100
+					  ],
+					  [
+						"August",
+						100
+					  ],
+					  [
+						"September",
+						100
+					  ],
+					  [
+						"October",
+						100
+					  ],
+					  [
+						"November",
+						100
+					  ],
+					  [
+						"December",
+						100
+					  ]
+					]
+				  },
+				  
+				]
+			  }
+			});
+		
+		</script>
+		
+		<script type="text/javascript">
+			Highcharts.chart('HC_topEvents', {
+			  chart: {
+				type: 'bar'
+			  },
+			  title: {
+				text: 'The most revenue-generating events'
+			  },
+			  xAxis: {
+				categories: ['B. B. Erzurumspor<br\>Galatasaray A.Ş.<br\>2019-08-05', 'America', 'Asia', 'Europe', 'Oceania'],
+				title: {
+				  text: null
+				}
+			  },
+			  yAxis: {
+				min: 0,
+				title: {
+				  text: 'Revenue',
+				  align: 'high'
+				},
+				labels: {
+				  overflow: 'justify'
+				}
+			  },
+			  tooltip: {
+				valueSuffix: ' $'
+			  },
+			  plotOptions: {
+				bar: {
+				  dataLabels: {
+					enabled: true
+				  }
+				}
+			  },
+			  legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'top',
+				x: -40,
+				y: 80,
+				floating: true,
+				borderWidth: 1,
+				backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+				shadow: true
+			  },
+			  plotOptions: {
+				series: {
+				  dataLabels: {
+					enabled: true,
+					format: '{point.y}$'
+				  }
+				}
+			  },
+			  credits: {
+				enabled: false
+			  },
+			  series: [{
+				name: 'Revenue',
+				data: [107.55, 31, 635, 203, 2]
+			  }]
+			});
+		</script>
+		
+		<script type="text/javascript">
+			Highcharts.chart('HC_topStadiums', {
+			  chart: {
+				type: 'bar'
+			  },
+			  title: {
+				text: 'The stadium that hosts the most events in the last year.'
+			  },
+			  xAxis: {
+				categories: ['Vodefone Arena', 'America', 'Asia', 'Europe', 'Oceania'],
+				title: {
+				  text: null
+				}
+			  },
+			  yAxis: {
+				min: 0,
+				title: {
+				  text: 'Number of events',
+				  align: 'high'
+				},
+				labels: {
+				  overflow: 'justify'
+				}
+			  },
+			  tooltip: {
+				valueSuffix: ''
+			  },
+			  plotOptions: {
+				bar: {
+				  dataLabels: {
+					enabled: true
+				  }
+				}
+			  },
+			  legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'top',
+				x: -40,
+				y: 80,
+				floating: true,
+				borderWidth: 1,
+				backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+				shadow: true
+			  },
+			  credits: {
+				enabled: false
+			  },
+			  series: [{
+				name: 'Number of events',
+				data: [107, 31, 635, 203, 2]
+			  }]
+			});
+		</script>
+		
+		
+	</body>
+</html>

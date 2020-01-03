@@ -1,0 +1,704 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title>TITLE</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/kardo-icon.png" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css">
+        <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="assets/dk-style/css/dk-style.css">
+		<link rel="stylesheet" type="text/css" href="css/kardo.css">
+		
+	</head>
+
+	<body>
+		<div class="dk-container">
+			<div id="resultForDisplayChanging"></div>
+			<!-- DK-TOP-SECTION -->
+			<header class="dk-top-section">
+				
+				<div class="navbar-icon sidebar-close"><i class="fa fa-bars"></i></div>
+				
+				<div class="kardo-logo">
+					<a href="index.html"><img src="img/kardo.png" alt="Kardo" class="hidden-xs"/>
+					<img src="img/kardo-k.png" alt="Kardo" class="hidden-lg hidden-md hidden-sm small"/>
+					<span class="logo-sub">DkStyle</span></a>
+				</div>
+				
+				<div class="log-section">
+					<!--<span class="btn-log hidden-xs open-dk-popup" data-id="dk-popup-login"><a href="javascript:;">Oturum Aç</a></span>-->
+					
+					<div class="log-nav hidden-xs">
+						<span class="dk-dropdown-btn search-box-btn" >
+							<span class="dk-icon"><i class="fa fa-search" data-id="search-box-wide"></i></span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-messages-box">
+							<span class="dk-icon"><i class="fa fa-envelope"></i></span>
+							<span class="dk-badge bg-danger">2</span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-notification-box">
+							<span class="dk-icon"><i class="fa fa-bell"></i></span>
+							<span class="dk-badge bg-danger">2</span>
+						</span>
+						<span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-apps-box">
+							<span class="dk-icon"><i class="fa fa-ellipsis-v"></i></span>
+						</span>
+					</div>
+					<span class="cursor-p hidden-xs dk-dropdown" data-dropdown="dk-user-box">	<img src="img/kardo-icon.png" alt="" />		</span>
+					<a href="#" class="hidden-lg hidden-md hidden-sm">	<img src="img/kardo-icon.png" alt="" />		</a> 
+				</div>
+				
+				<!-- dk-apps-box -->
+				<div id="dk-apps-box" class="dk-apps-box hidden-xs">
+					<div class="aplications">
+						<div class="aplications-links">
+							<a href="colors.html"><img src="img/kardo-icon.png" alt="" /><span class="text">Colors</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+							<a href="#"><img src="img/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+						</div>
+					</div>
+					<a href="#" class="all-app">Daha Fazlası</a>
+				</div>
+				<!-- dk-user-box -->
+				<div id="dk-user-box" class="dk-user-box hidden-xs">
+					<div class="active-account">
+						<div class="user-photo">
+							<img src="img/kardo-icon.png" alt="" />
+							<a href="#">Fotorafı Değiştir</a>
+						</div>
+						<div class="user-info">
+							<div class="user-rname">Kardo</div>
+							<div class="username">@Kardo</div>
+							<div class="user-profil-link"><a href="#" class="dk-btn dk-btn-primary">Profile Git</a></div>
+						</div>
+						<div class="clear-both"></div>
+					</div>
+					<div class="other-accounts">
+						<div class="accounts-item">
+							<a href="#">
+								<img src="img/kardo-icon.png" alt="" />
+								<div class="user-rname">Kardo</div>
+								<div class="username">@Kardo</div>
+							</a>
+						</div>
+					</div>
+					<div class="dk-user-box-log">
+						<div class="row margin-0">
+							<div class="col-xs-6 pad-l-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Hesap Ekle</a></div>
+							<div class="col-xs-6 pad-r-15"><a href="#" class="dk-btn dk-btn-wide dk-btn-default">Oturumu Kapat</a></div>
+						</div>
+					</div>
+				</div>
+				<!-- dk-notification-box -->
+				<div id="dk-notification-box" class="dk-notification-box hidden-xs">
+					<div class="notifications-links">
+						<div class="dk-notification-box-h"><img src="img/kardo.png" alt="" /></div>
+						<a href="#"><div class="notifications-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link unread">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="notifications-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="noti-info">
+								<div class="header">Bildirim başlık</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+					</div>
+					<a href="#" class="all-noti">Tümünü Gör</a>
+				</div>
+				<!--dk-messages-box-->
+				<div id="dk-messages-box" class="dk-messages-box hidden-xs">
+					<div class="dk-message-box-h">Mesajlar(2)</div>
+					<div class="messages-links">
+						<a href="#"><div class="message-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link unread">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+						<a href="#"><div class="message-link">
+							<img src="img/kardo-k.png" alt="" />
+							<div class="message-info">
+								<div class="header">Doğuş Kar</div>
+								<div class="explanation">Kısa Açıklama açıklama açıklama açıklama açıklama açıklama...</div>
+								<div class="date">01:48 | 21.08.2017</div>
+							</div>
+						</div></a>
+					</div>
+					<a href="#" class="all-messages">Tümünü Gör</a>
+				</div>
+				<!--search-box-wide-->
+				<div id="search-box-wide" class="search-box-wide fixed">
+					<form method="post">
+						<input type="text" placeholder="Aradığınız Kelimeyi yazınız.."/>
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+				
+				<nav class="menu-horizontal hidden-sm hidden-xs">
+					<ul>
+						<li><a href="index.html">Anasayfa</a></li>
+						<li><a href="#">Openable</a>
+							<ul>
+								<li><a href="#">Sub Item 1</a></li>
+								<li><a href="#">Sub Item 2</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</nav>
+							
+				<div class="clear-both"></div>
+			</header>
+			
+				
+		<!-- DK-TOP-SECTION END -->
+		<!--- sidebar-menu -->
+			<nav class="menu-section" id="accordion">
+				<div class="dk-sidebar-menu-close fixed sidebar-close" id="dk-sidebar-menu-close" style="left:0;" ></div>
+				
+				<div class="dk-sidebar-menu sidebar-fixed sidebar-dark-theme" id="dk-sidebar-menu" style="left:0px;">
+					<!--- logo section --->
+					<span id="dk-sidebar-menu-off-fixed" class="dk-sidebar-menu-off-fixed fixed" onClick=""><i class="fa fa-thumb-tack"></i></span>
+					<div class="dk-sidebar-menu-off">
+						<a href="index.html"><img src="img/kardo.png"/><span class="logo-sub">DkStyle</span></a>
+						<span class="dk-sidebar-menu-off-close sidebar-close"><i class="fa fa-chevron-left"></i></span>
+						<div class="clear-both"></div>
+					</div>
+					<!--- log-off / log-on --->
+					<div class="dk-sidebar-menu-log">
+						<div class="dk-sidebar-menu-log-on">
+							<a href="login.html"><i class="fa fa-user mar-r-10"></i>OTURUM AÇ</a>
+						</div>
+						<!--<div class="dk-sidebar-menu-log-off">
+							<a href="#">
+								<img src="img/kardo-icon.png" alt="" />
+								<span>Doğuş Kar</span>
+							</a>
+						</div>-->
+					</div>
+					
+					<!--- menu --->
+					<ul id="dk-accordion-menu">
+						<li class="dk-sidebar-menu-header">
+								<a href="#" class="header">Header</a>
+						</li>
+						<li class="dk-sidebar-menu-item active">
+							<a href="index.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-home" ></i>
+								<span class="dk-sidebar-menu-item-title">HomePage</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-book" ></i>
+								<span class="dk-sidebar-menu-item-title">UI Elements</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="general.html">General</a></li>
+								<li><a href="buttons.html">Buttons</a></li>
+								<li><a href="widgets.html">Widgets</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-tasks" ></i>
+								<span class="dk-sidebar-menu-item-title">Form Stuff</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="form-components.html">Form Components</a></li>
+							</ul>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="tables.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-table" ></i>
+								<span class="dk-sidebar-menu-item-title">Tables</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="mailbox.html">
+								<i class="dk-sidebar-menu-item-logo fa fa-commenting-o" ></i>
+								<span class="dk-sidebar-menu-item-title">Mailbox</span>
+								<div class="clear-both"></div>
+							</a>
+						</li>
+						<li class="dk-sidebar-menu-item">
+							<a href="javascript:;">
+								<i class="dk-sidebar-menu-item-logo fa fa-plus" ></i>
+								<span class="dk-sidebar-menu-item-title">Extra</span>
+								<div class="clear-both"></div>
+							</a>
+							<ul>
+								<li><a href="404.html">404 Error</a></li>
+								<li><a href="500.html">500 Error</a></li>
+							</ul>
+						</li>
+					</ul>
+					
+					<!--- social sites --->
+					<div class="dk-sidebar-menu-social">
+						<a href="https://www.facebook.com/kardo.official/" target="blank"><i class="fa fa-facebook-official"></i></a>
+						<a href="https://twitter.com/KardoOfficial" target="blank"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/kardo.official/" target="blank"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.youtube.com/doguskar" target="blank"><i class="fa fa-youtube"></i></a>
+					</div>
+					<div class="dk-sidebar-menu-footer">
+						<img src="img/kardo.png" alt="" />
+						<span class="cursor-d">Kopyalanamaz © 2017</span>
+					</div>
+					
+				</div>
+			</nav>
+		<!--- sidebar-menu end -->
+			
+			<article class="content-section fixed-sidebar active col-xs-12" id="content-section">
+				<div class="row">
+				<!--breadcrumb-->
+					<ul class="breadcrumb">
+						<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+						<li class="active">Data</li>
+					</ul>
+				<!--breadcrumb end-->
+				</div>
+				<!-- UI ELEMENTS -->
+				<div class="row mar-b-20">
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header ">ALERTS-STYLE-2</div>
+							<div class="dk-alert-style-2 bg-success" id="dk-alert-1">
+								<div class="close-btn" data-id="dk-alert-1"><span class="close fa fa-times"></span></div>
+								<h1><span class="fa fa-check"></span>Success</h1>
+								<p><strong>Best check</strong> yo self, you're not looking too good...</p>
+							</div>
+							<div class="dk-alert-style-2 bg-primary" id="dk-alert-2">
+								<div class="close-btn" data-id="dk-alert-2"><span class="close fa fa-times"></span></div>
+								<p><strong>Best check</strong> yo self, you're not looking too good...</p>
+							</div>
+							<div class="dk-alert-style-2 bg-danger" id="dk-alert-3">
+								<div class="close-btn" data-id="dk-alert-3"><span class="close fa fa-times"></span></div>
+								<h1><span class="fa fa-times"></span>Success</h1>
+								<p><strong>Best check</strong> yo self, you're not looking too good...</p>
+							</div>
+							<div class="dk-alert-style-2 bg-warning" id="dk-alert-4">
+								<div class="close-btn" data-id="dk-alert-4"><span class="close fa fa-times"></span></div>
+								<h1><span class="fa fa-exclamation"></span>Warning</h1>
+								<p><strong>Best check</strong> yo self, you're not looking too good...</p>
+							</div>
+							<div class="dk-alert-style-2" id="dk-alert-5">
+								<div class="close-btn" data-id="dk-alert-5"><span class="close fa fa-times"></span></div>
+								<p><strong>Best check</strong> yo self, you're not looking too good...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header ">ALERTS</div>		
+							<div class="dk-alert dk-alert-success"> <span class="fa fa-check-square dk-alert-logo dk-alert-logo-success"></span> Success</div>
+							<div class="dk-alert dk-alert-danger"> <span class="fa fa-exclamation-triangle dk-alert-logo dk-alert-logo-danger"></span> Danger</div>
+							<div class="dk-alert dk-alert-warning"> <span class="fa fa-exclamation-circle dk-alert-logo dk-alert-logo-warning"></span> Warning</div>
+							<div class="dk-alert dk-alert-primary"> <span class="fa fa-question-circle dk-alert-logo dk-alert-logo-primary"></span> Primary</div>
+							<div class="dk-alert dk-alert-default"><span class="fa fa-question-circle-o dk-alert-logo dk-alert-logo-default"></span> Default</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header">Popover</div>
+								<a href="#" title="Header" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Content">Click</a>
+								<a href="#" title="Header" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Content">Click</a>
+								<a href="#" title="Header" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="Content">Click</a>
+								<a href="#" title="Header" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Content">Click</a>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header">Tooltips</div>
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+								  Tooltip on top
+								</button>
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+								  Tooltip on right
+								</button>
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+								  Tooltip on bottom
+								</button>
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+								  Tooltip on left
+								</button>
+						</div>
+					</div>
+					
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+						
+							<div class="panel-header">Accordion İçerik</div>
+							<div class="dk-accordion-sec">
+								<div class="dk-acc-header">Header</div>
+								<div class="dk-acc-content">
+									<h1>Header</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								</div>
+							</div>
+							<div class="dk-accordion-sec">
+								<div class="dk-acc-header">Header</div>
+								<div class="dk-acc-content">
+									<h4>Header</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header">Notifications</div>
+							<button class="dk-btn dk-btn-primary gritter-notification" data-time="1000" 
+																					   data-sticky="false" 
+																					   data-title="Title" 
+																					   data-content="İçerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik."
+																					   data-image="img/kardo-icon.png"
+																					   >Notification</button>
+							<button class="dk-btn dk-btn-primary gritter-notification" data-time="1000" 
+																					   data-sticky="true" 
+																					   data-title="Title" 
+																					   data-content="İçerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik."
+																					   data-image=""
+																					   >Sticky</button>
+							<button class="dk-btn dk-btn-primary gritter-notification" data-time="1000" 
+																					   data-sticky="true" 
+																					   data-title="" 
+																					   data-content="İçerik içerik içerik içerik içerik içerik içerik"
+																					   data-image=""
+																					   >Sticky</button>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header">Popups</div>
+							<!--DK-POPUP BUTTON-->
+							<button class="dk-btn dk-btn-primary open-dk-popup" data-id="dk-popup-1">DK-PopUp Aç</button>
+							<button class="dk-btn dk-btn-primary open-dk-popup" data-id="dk-popup-2">DK-PopUp Aç</button>
+							<button class="dk-btn dk-btn-primary open-dk-popup" data-id="dk-popup-login">Oturum Aç</button>
+							<button class="dk-btn dk-btn-primary dk-dynamic-popup" data-title="Title"
+																				   data-iframe="false"
+																				   data-content="İçerik"
+																				   data-type="alert"
+																				   data-theme="dark-theme"
+																				   >Dynamic Popup</button>
+							<button class="dk-btn dk-btn-primary dk-dynamic-popup" data-title="Oturum Açma"
+																				   data-iframe="true"
+																				   data-content="login.html"
+																				   data-type="alert"
+																				   data-theme="bg-primary"
+																				   >Dynamic Popup</button>
+							<button class="dk-btn dk-btn-primary" onClick="creat_popup('title',
+																					   'false',
+																					   'İçerik içerik',
+																					   'confirm',
+																					   'bg-warning')">Dynamic Popup</button>
+							<button class="dk-btn dk-btn-primary dk-dynamic-popup" data-content="İşlemi onaylıyor musunuz?"
+																				   data-theme="confirm"
+																				   >Confirm Popup</button>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header">Panels</div>
+							<section class="panel">
+								<header class="panel-heading tab-bg-dark-navy-blue ">
+								  <ul class="nav nav-tabs">
+									  <li class="active">
+										  <a data-toggle="tab" href="#home">Home</a>
+									  </li>
+									  <li class="">
+										  <a data-toggle="tab" href="#about">About</a>
+									  </li>
+									  <li class="">
+										  <a data-toggle="tab" href="#profile">Profile</a>
+									  </li>
+									  <li class="">
+										  <a data-toggle="tab" href="#contact">Contact</a>
+									  </li>
+								  </ul>
+								</header>
+								<div class="panel-body">
+								  <div class="tab-content">
+									  <div id="home" class="tab-pane active">
+										  Home
+									  </div>
+									  <div id="about" class="tab-pane">About</div>
+									  <div id="profile" class="tab-pane">Profile</div>
+									  <div id="contact" class="tab-pane">Contact</div>
+								  </div>
+								</div>
+							</section>
+							<section class="panel">
+								<header class="panel-heading">
+									<span class="hearder float-l">Başlık <div class="clear-both"></div></span>
+									<ul class="nav nav-tabs float-r">
+										<li class="active">
+										  <a data-toggle="tab" href="#home2">Home</a>
+										</li>
+										<li class="">
+										  <a data-toggle="tab" href="#about2">About</a>
+										</li>
+										<li class="">
+										  <a data-toggle="tab" href="#profile2">Profile</a>
+										</li>
+										<li class="">
+										  <a data-toggle="tab" href="#contact2">Contact</a>
+										</li>
+									</ul>
+								</header>
+								<div class="clear-both"></div>
+								<div class="panel-body">
+								  <div class="tab-content">
+									  <div id="home2" class="tab-pane active">
+										  Home
+									  </div>
+									  <div id="about2" class="tab-pane">About</div>
+									  <div id="profile2" class="tab-pane">Profile</div>
+									  <div id="contact2" class="tab-pane">Contact</div>
+								  </div>
+								</div>
+							</section>
+						</div>
+					</div>
+					
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header ">PROGRESS BARS</div>
+								<!--PROGRESS BARS-->
+								  <div class="progress progress-xs">
+									  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+										  <span class="sr-only">60% Complete</span>
+									  </div>
+								  </div>
+								  <div class="progress progress-xs">
+									  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+										  <span class="sr-only">40% Complete (success)</span>
+									  </div>
+								  </div>
+								  <div class="progress progress-xs">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+										  <span class="sr-only">20% Complete</span>
+									  </div>
+								  </div>
+								  <div class="progress progress-xs">
+									  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+										  <span class="sr-only">60% Complete (warning)</span>
+									  </div>
+								  </div>
+								  <div class="progress progress-xs">
+									  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+										  <span class="sr-only">80% Complete</span>
+									  </div>
+								  </div>
+								  <p class="text-muted">
+									  Stacked Progress Bars
+								  </p>
+								  <div class="progress progress-sm">
+									  <div class="progress-bar progress-bar-success" style="width: 35%">
+										  <span class="sr-only">35% Complete (success)</span>
+									  </div>
+									  <div class="progress-bar progress-bar-warning" style="width: 20%">
+										  <span class="sr-only">20% Complete (warning)</span>
+									  </div>
+									  <div class="progress-bar progress-bar-danger" style="width: 10%">
+										  <span class="sr-only">10% Complete (danger)</span>
+									  </div>
+								  </div>
+								  <!--PROGRESS BARS END-->
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="dk-panel-box">
+							<div class="panel-header ">striped PROGRESS BARS</div>
+								<!--PROGRESS BARS-->
+                              <div class="progress progress-striped progress-sm">
+                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                      <span class="sr-only">40% Complete (success)</span>
+                                  </div>
+                              </div>
+                              <div class="progress progress-striped progress-sm">
+                                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                      <span class="sr-only">20% Complete</span>
+                                  </div>
+                              </div>
+                              <div class="progress progress-striped progress-sm">
+                                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                      <span class="sr-only">60% Complete (warning)</span>
+                                  </div>
+                              </div>
+                              <div class="progress progress-striped progress-sm">
+                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                      <span class="sr-only">80% Complete (danger)</span>
+                                  </div>
+                              </div>
+                              <p class="text-muted">
+                                  Animated Progress Bars
+                              </p>
+                              <div class="progress progress-striped active progress-sm">
+                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                      <span class="sr-only">45% Complete</span>
+                                  </div>
+                              </div>
+								<!--PROGRESS BARS END-->
+						</div>
+					</div>
+					
+					
+					
+				<!-- UI ELEMENTS -->
+			</article>
+			<!--DK-POPUP -->
+			<div id="dk-popup-1" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup dark-theme" data-id="dk-popup-1">
+						<div class="title">
+							<span class="text">Başlık</span>
+							<span class="popup-close close-dk-popup" data-id="dk-popup-1"><i class="fa fa-times"></i></span>
+						</div>
+						<div class="content">
+							<h1>Başlık</h1>
+							<p>İçerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik</p>
+						</div>
+						<div class="footer">
+							<button class="dk-btn dk-btn-danger close-dk-popup" data-id="dk-popup-1">Vazgeç</button>
+							<button class="dk-btn dk-btn-success save-dk-popup">Kaydet</button>
+							<button class="dk-btn dk-btn-warning confirm-dk-popup">Kabul Et</button>
+							<button class="dk-btn dk-btn-primary close-dk-popup" data-id="dk-popup-1">Tamam</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="dk-popup-2" class="dk-popup-overlay closeable-popup">
+				<div class="middle">
+					<div class="dk-popup bg-primary" data-id="dk-popup-2">
+						<div class="title">
+							<span class="text">Başlık</span>
+							<span class="popup-close close-dk-popup" data-id="dk-popup-2"><i class="fa fa-times"></i></span>
+						</div>
+						<div class="content">
+							<h1>Başlık</h1>
+							<p>İçerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik içerik</p>
+						</div>
+						<div class="footer">
+							<button class="dk-btn dk-btn-danger close-dk-popup" data-id="dk-popup-2">Vazgeç</button>
+							<button class="dk-btn dk-btn-success save-dk-popup">Kaydet</button>
+							<button class="dk-btn dk-btn-warning confirm-dk-popup">Kabul Et</button>
+							<button class="dk-btn dk-btn-primary close-dk-popup" data-id="dk-popup-2">Tamam</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="dk-popup-login" class="dk-popup-overlay">
+				<div class="middle">
+					<div class="dk-popup bg-primary">
+						<div class="title">
+							<span class="text">Oturum Açma</span>
+							<span class="popup-close close-dk-popup" data-id="dk-popup-login"><i class="fa fa-times"></i></span>
+						</div>
+						<div class="content">
+							<iframe name="loginPageIFrame" width=560 height=350 src="loginIFrame.html" scrolling="no" frameborder="0"></iframe>
+						</div>
+						<div class="footer">
+							<button class="dk-btn dk-btn-danger close-dk-popup" data-id="dk-popup-login">Kapat</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--DK-POPUP END-->
+			<aside class="aside-section"></aside>
+		
+		</div>
+		
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type='text/javascript' src='assets/jquery/jquery-3.2.1.min.js'></script>
+		<script src="assets/bootstrap/js/bootstrap.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-settings.js"></script>
+		<script src="assets/dcjqaccordion/jquery.dcjqaccordion.2.7.min.js"></script>
+		<script src="assets/dcjqaccordion/dcjqaccordion-settings.js"></script>
+		<script src="assets/nicescroll/js/jquery.nicescroll.min.js"></script>
+		<script src="assets/nicescroll/js/nicescroll-settings.js"></script>
+        <script src="assets/dk-style/js/dk-javascript.js"></script>
+        <script src="assets/dk-style/js/dynamic-popup.js"></script>
+        
+		<script src="assets/count/count.js"></script>
+		<script src="assets/gritter/js/jquery.gritter.min.js"></script>
+		<script src="assets/gritter/js/gritter-settings.js"></script>
+
+	</body>
+</html>

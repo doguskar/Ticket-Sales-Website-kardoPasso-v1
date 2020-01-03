@@ -1,0 +1,387 @@
+.truncated{
+    display: block;
+    white-space: nowrap; /* forces text to single line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dk-diagram-canvas-overlay{
+	background-color:#fff;
+	box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	margin:10px auto;
+	overflow:auto;
+	max-width: 1080px;
+}
+.dk-diagram-canvas{
+	width: 1080px;
+	position:relative;
+}
+.dk-diagram-box{
+	display:inline-block;
+	border: 1px solid #adadad;
+	font-size:14px;
+	line-height:1.2;
+	width:250px;
+	background-color:#fff;
+	box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	margin:10px;
+	float:left;
+}
+.dk-diagram-box ul, .dk-diagram-box ul li{
+	padding:0;
+	margin:0;
+	position:relative;
+	margin:5px 0px;
+}
+.dk-diagram-box ul li{
+	cursor:pointer;
+}
+.dk-diagram-box .ddb-content-sec .ddb-row ul li .name{
+	display:inline-block;
+	position:absolute;
+	left:20px;
+	max-width:160px;
+}
+.dk-diagram-box .ddb-content-sec .ddb-row ul li .detail{
+	display:inline-block;
+	position:absolute;
+	right:0;
+	max-width:50px;
+}
+.dk-diagram-box ul{	list-style-position:inside;	}
+.dk-diagram-box ul li.class{	list-style-image:url('../img/class-14px.png');}
+.dk-diagram-box ul li.class-abstract{	list-style-image:url('../img/class-abstract-14px.png');}
+.dk-diagram-box ul li.class-static{	list-style-image:url('../img/class-static-14px.png');}
+.dk-diagram-box ul li.interface{	list-style-image:url('../img/interface-14px.png');}
+.dk-diagram-box ul li.method{	list-style-image:url('../img/method-14px.png');}
+.dk-diagram-box ul li.method-abstract{	list-style-image:url('../img/method-abstract-14px.png');}
+.dk-diagram-box ul li.method-static{	list-style-image:url('../img/method-static-14px.png');}
+.dk-diagram-box ul li.annotation{	list-style-image:url('../img/annotation-14px.png');}
+.dk-diagram-box ul li.enum{	list-style-image:url('../img/enum-14px.png');}
+.dk-diagram-box ul li.field{	list-style-image:url('../img/field-14px.png');}
+.dk-diagram-box ul li.parameter{	list-style-image:url('../img/parameter-14px.png');}
+.dk-diagram-box ul li.variable{	list-style-image:url('../img/variable-14px.png');}
+.dk-diagram-box .ddb-header{
+	padding:10px;
+	background-color:#e9e9e9;
+	cursor:move;
+}
+.dk-diagram-box .ddb-header ul li{
+	position:relative;
+}
+.dk-diagram-box .ddb-header ul li .txt{
+	position:absolute;
+	left:20px;
+	top:0;
+	max-width:220px;
+}
+.dk-diagram-box .ddb-content-sec{
+}
+.dk-diagram-box .ddb-content-sec .ddb-row{
+	padding:10px;
+	border-top:1px solid #adadad;
+}
+.dk-diagram-box .ddb-content-sec .ddb-row.ddb-comments-sec ul{
+	list-style:none;
+	font-size:12px;
+}
+.dk-diagram-box .ddb-content-sec .ddb-row.ddb-comments-sec ul li{
+	text-indent:8px;
+}
+
+.dk-diagram-box .ddb-content-sec .ddb-row.ddb-comments-sec ul li ul li{
+	text-indent:0px;
+}
+
+.dk-diagrams-menu{
+	background:#fff;
+	box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	position:relative;
+}
+.dk-diagrams-menu ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.dk-diagrams-menu ul li{
+	padding:0;
+	margin:0;
+	float:left;
+	display:inline-block;
+	font-size:16px;
+	line-height:1;
+	padding:5px;
+	margin: 5px 0px 5px 5px;
+	cursor:pointer;
+	color:#333;
+	transition:0.3s;
+}
+.dk-diagrams-menu ul li.passive{
+	color:#adadad;
+	cursor:default;
+}
+.dk-diagrams-menu ul li:hover{
+	color:#adadad;
+}
+.dk-diagrams-menu ul li.info{
+	padding:0;
+	margin:0;
+	border:none;
+	font-size:12px;
+	line-height:1;
+	padding:0px;
+	margin: 0px 5px 5px 0px;
+	cursor:default;
+	background-color:#fff;
+	color:#646464;
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	max-width:300px;
+	max-height:22.22px;
+}
+.dk-diagrams-menu ul li.info:hover{
+	background-color:#fff;
+	color:#646464;
+}
+
+.dk-diagram-box ul li.small-menu{
+	list-style:none;
+	text-align:right;
+	position:absolute;
+	top:-25px;
+	right:-10px;
+	font-size:12px;
+}
+.dk-diagram-box ul li.small-menu i{
+	border-radius:100%;
+	margin:5px 5px 0px 0px;
+	color:#adadad;
+	transition: color 0.3s;
+}
+.dk-diagram-box ul li.small-menu:hover i{
+	color:#333;
+}
+.dk-diagram-box ul li.small-menu ul, .dk-diagrams-menu ul li.dd-history ul{
+	list-style:none;
+	position:absolute;
+	background:#fff;
+	top:20px;
+	right:0px;
+	box-shadow:rgba(0,0,0,0.3) 0px 0px 3px;
+	padding:3px 0px;
+	cursor:default;
+	width:160px;
+	
+	visibility: hidden;
+	transform: translateY(-0.5em);
+	z-index: -1;
+	opacity: 0;
+    transition: transform 0.3s;
+}
+.dk-diagram-box ul li.small-menu ul::after, .dk-diagrams-menu ul li.dd-history ul::after{
+	content: "";
+	position: absolute;
+	top:-8px;
+	right: 3px;
+	margin-left: -5px;
+	border-width: 0px 8px 8px 8px;
+	border-style: solid;
+	border-color: transparent transparent #fff transparent;
+}
+.dk-diagram-box ul li.small-menu ul::before, .dk-diagrams-menu ul li.dd-history ul::before{
+	content: "";
+	position: absolute;
+	top:-10.5px;
+	right: 2px;
+	margin-left: -5px;
+	border-width: 0px 9.2px 9.2px 9.2px;
+	border-style: solid;
+	border-color: transparent transparent #d0d0d0 transparent;
+}
+.dk-diagram-box ul li.small-menu span:hover ul, .dk-diagrams-menu ul li.dd-history  span:hover ul{
+	visibility: visible;
+	opacity: 1;
+	z-index: 999;
+	transform: translateY(0%);
+}
+.dk-diagram-box ul li.small-menu ul li, .dk-diagrams-menu ul li.dd-history ul li{
+	margin:2px 0px;
+	padding:5px;
+	text-align:left;
+	transition:0.3s;
+}
+.dk-diagram-box ul li.small-menu ul li:hover, .dk-diagrams-menu ul li.dd-history ul li:hover{
+	background-color:#e9e9e9;
+}
+
+.dk-diagram-box .ddb-header ul li.small-menu{
+	position:absolute;
+	top:-18px;
+	right:-10px;
+	margin:0;
+}
+
+.dk-diagrams-menu ul li.dd-history{
+	position:relative;
+}
+.dk-diagrams-menu ul li.dd-history ul{
+	top:30px;
+	left:0px;
+	width:200px;
+	max-height:300px;
+}
+.dk-diagrams-menu ul li.dd-history ul li{
+	display:block;
+	width:100%;
+	font-size:12px;
+}
+.dk-diagrams-menu ul li.dd-history ul li:hover{
+	color:#333;
+}
+.dk-diagrams-menu ul li.dd-history ul::after{
+	top:-8px;
+	right: 180px;
+	margin-left: -5px;
+}
+.dk-diagrams-menu ul li.dd-history ul::before{
+	top:-10.5px;
+	right: 179px;
+	margin-left: -5px;
+}
+/*Arrangement popup*/
+.middle{
+	display:table-cell;
+	vertical-align:middle;
+}
+.ddp-overlay{
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0px;
+	background-color: rgba(0,0,0,0.5);
+	z-index:999;
+	display:none;
+}
+.ddp-overlay.active{
+	display:table;
+}
+.dk-diagram-popup{
+	z-index:1000;
+	margin:0px auto 50px auto;
+	max-width:500px;
+	min-width:250px;
+}
+.ddp-hearder{
+	background-color:#fff;
+	border-bottom:1px solid #adadad;
+	padding:10px;
+	font-weight:bold;
+	font-size:16px;
+	cursor:default;
+}
+.ddp-content{
+	background-color:#fff;
+	padding:20px 10px;
+}
+.ddp-content table{
+	width:100%;
+}
+.ddp-content table th, .ddp-content table td{
+	text-align:center;
+	padding:0px 5px;
+}
+.ddp-content select{
+	outline:none;
+	padding:4px;
+	width:100%;
+	border:2px solid #333;
+	color:#333;
+	font-weight:bold;
+	transition:300ms;
+}
+.ddp-content select:focus{
+	border-color:#1980da;
+	color:#337ab7;
+}
+.ddp-footer{
+	background-color:#fff;
+}
+.ddp-footer .dk-btn{
+	border-radius:0;
+	padding:10px;
+}
+.ddp-footer .dk-btn.dk-btn-default{
+	background-color:#fff;
+	border-left:none;
+	border-bottom:none;
+}
+.ddp-footer .dk-btn.dk-btn-default:hover{
+	border-color:#adadad;
+	color:#000;
+}
+.ddp-footer .dk-btn.dk-btn-default:focus{
+	box-shadow:none;
+	border-color:#adadad;
+	color:#000;
+}
+.ddp-footer .dk-btn.border-r-none{	border-right:none;	}
+.ddp-footer .dk-btn.dk-btn-default.ddp-remove:hover{	color:#e12424;	}
+.ddp-footer .dk-btn.dk-btn-default.ddp-save:hover{	color:#1980da;	}
+.ddp-footer .dk-btn.dk-btn-default.ddp-cancel:focus{	color:#000;	}
+.ddp-footer .dk-btn.dk-btn-default.ddp-remove:focus{	color:#e12424;	}
+.ddp-footer .dk-btn.dk-btn-default.ddp-save:focus{	color:#1980da;	}
+/*Arrangement popup END*/
+
+/*Dark theme*/
+/*dk-diagram-canvas*/
+.dk-diagram-canvas.dark-theme{background-color:#333;}
+/*dk-diagrams-menu*/
+.dk-diagrams-menu.dark-theme{
+	background:#333;
+	box-shadow:rgba(255,255,255,0.2) 0px 0px 5px;
+}
+.dk-diagrams-menu.dark-theme ul li{color:#d0d0d0;}
+.dk-diagrams-menu.dark-theme ul li.passive{color:#646464;}
+.dk-diagrams-menu.dark-theme ul li:hover{color:#646464;}
+.dk-diagrams-menu.dark-theme ul li.info{
+	background-color:#333;
+	color:#d0d0d0;
+}
+.dk-diagrams-menu.dark-theme ul li.info:hover{
+	background-color:#333;
+	color:#d0d0d0;
+}
+/*dk-diagram-box*/
+.dk-diagram-box.dark-theme{
+	border-color:#1e1e1e;
+	color:#adadad;
+	background-color:#333;
+}
+.dk-diagram-box.dark-theme .ddb-header{
+	background-color:#1e1e1e;
+	color:#d0d0d0;
+}
+.dk-diagram-box.dark-theme ul li.small-menu:hover i{color:#fff;}
+.dk-diagram-box.dark-theme .ddb-content-sec .ddb-row{border-color:#646464;}
+.dk-diagram-box.dark-theme ul li.small-menu ul, .dk-diagrams-menu.dark-theme ul li.dd-history ul{
+	background:#333;
+	box-shadow:rgba(255,255,255,0.3) 0px 0px 3px;
+}
+.dk-diagram-box.dark-theme ul li.small-menu ul li:hover, .dk-diagrams-menu.dark-theme ul li.dd-history ul li:hover{background-color:#1e1e1e; color:#d0d0d0;}
+.dk-diagram-box.dark-theme ul li.small-menu ul::after, .dk-diagrams-menu.dark-theme ul li.dd-history ul::after{border-color: transparent transparent #333 transparent;}
+.dk-diagram-box.dark-theme ul li.small-menu ul::before, .dk-diagrams-menu.dark-theme ul li.dd-history ul::before{border-color: transparent transparent #646464 transparent;}
+
+.dk-diagram-box.dark-theme ul li.class{	list-style-image:url('../img/class-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.class-abstract{	list-style-image:url('../img/class-abstract-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.class-static{	list-style-image:url('../img/class-static-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.interface{	list-style-image:url('../img/interface-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.method{	list-style-image:url('../img/method-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.method-abstract{	list-style-image:url('../img/method-abstract-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.method-static{	list-style-image:url('../img/method-static-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.annotation{	list-style-image:url('../img/annotation-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.enum{	list-style-image:url('../img/enum-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.field{	list-style-image:url('../img/field-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.parameter{	list-style-image:url('../img/parameter-dark-14px.png');}
+.dk-diagram-box.dark-theme ul li.variable{	list-style-image:url('../img/variable-dark-14px.png');}
+
+/*Dark theme*/
