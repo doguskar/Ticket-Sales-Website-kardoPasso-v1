@@ -1,0 +1,181 @@
+﻿@{
+    ViewBag.Title = "KardoPasso";
+}
+@{
+    Dictionary<string, List<Object>> events;
+    events = ViewBag.Events;
+    Dictionary<string, List<Object>> eventsCities;
+    eventsCities = ViewBag.EventsCities;
+    Dictionary<string, List<Object>> eventsTeams;
+    eventsTeams = ViewBag.EventsTeams;
+    int slider = 0;
+}
+
+@section head
+{
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/dk-style/css/cssload-Michael.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/simplepicker-master/css/simplepicker.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/swiper-3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/swiper-3.3.1/css/swipe-modified.css">
+}
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+            @for (int curEventIn = 0; curEventIn < events["eventId"].Count; curEventIn++)
+            {
+                if (slider == 5)
+	            {
+		             break;
+	            }
+                
+                int curEventId = (int)events["eventId"][curEventIn];
+                string curEventIdEncrypted = UseKardoEncryption.getEncryptedString("" + curEventId, 100);
+
+                Object curEventPicObj = events["eventPic"][curEventIn];
+                string curEventPic = "noNarrowEventPic.jpg";
+                if (!string.IsNullOrEmpty(curEventPicObj.ToString()))
+                {
+                    curEventPic = (string)events["eventPic"][curEventIn];
+                }
+                else
+                {
+                    continue;
+                }
+                slider++;
+                
+                <div class="swiper-slide">
+                    <a href="/EventDetail?eventId=@curEventIdEncrypted"><img src="/Content/kardoPasso/img/uploads/@curEventPic"></a>
+                </div>
+                
+            }
+    </div>
+
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<div class="kardoPasso-content">
+    <h1>All Events</h1>
+    <div class="KP-content-l hidden-xs">
+        <div class="categoryMenu">
+            <div class="CM-header"><i class="fa fa-calendar"></i><div class="CMH-txt">WHEN</div></div>
+            <div class="CM-items">
+                <div class="CM-item"><a href="javascript:;" id="eventCategoryToday">TODAY</a></div>
+                <div class="CM-item"><a href="javascript:;" id="eventCategoryTomorrow">TOMORROW</a></div>
+                <div class="CM-item"><a href="javascript:;" id="eventCategoryWeek">THIS WEEK</a></div>
+                <div class="CM-item"><a href="javascript:;" id="eventCategoryMonth">THIS MONTH</a></div>
+            </div>
+
+            <div class="CM-header subH">Start Date</div>
+            <input type="button" id="startDate" value="Click to Select" />
+            <div class="CM-header subH">End Date</div>
+            <input type="button" id="endDate" value="Click to Select" />
+
+            <div class="CM-header"><i class="fa fa-map-marker"></i><div class="CMH-txt">WHERE</div></div>
+            <select name="" id="eventsCitiesSelect" style="text-transform: capitalize;">
+                <option value="0"></option>
+                @foreach (Object item in eventsCities["city"])
+                {
+                    <option value="@item.ToString()">@item.ToString()</option>
+                }
+            </select>
+            <div class="CM-header"><i class="fa fa-superpowers"></i><div class="CMH-txt">TEAMS</div></div>
+            <select name="" id="eventsTeamsSelect" style="text-transform: capitalize;">
+                <option value="0"></option>
+                @for (int curIn = 0; curIn < eventsTeams["teamId"].Count; curIn++)
+                {
+                    <option value="@eventsTeams["teamId"][curIn].ToString()">@eventsTeams["teamName"][curIn].ToString()</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="KP-content-r">
+        <div id="dk-loading-sec" class="dk-loading-sec">
+            <div class="out-of-middle">
+                <div class="middle">
+                    <div class="cssload-container">
+                        <div class="cssload-lt"></div>
+                        <div class="cssload-rt"></div>
+                        <div class="cssload-lb"></div>
+                        <div class="cssload-rb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="eventsContainer">
+            @if (events.Count != 0)
+            {
+                for (int curEventIn = 0; curEventIn < events["eventId"].Count; curEventIn++)
+                {
+                    int curEventId = (int)events["eventId"][curEventIn];
+                    string curEventIdEncrypted = UseKardoEncryption.getEncryptedString("" + curEventId, 100);
+                    string curHostTeam = (string)events["hostTeamName"][curEventIn];
+                    string curOtherTeam = (string)events["otherTeamName"][curEventIn];
+                    string curEventHeader = curHostTeam + " - " + curOtherTeam;
+                    DateTime curDate = (DateTime)events["eventDate"][curEventIn];
+
+                    Object curEventPicObj = events["eventPic"][curEventIn];
+                    string curEventPic = "noNarrowEventPic.jpg";
+                    if (!string.IsNullOrEmpty(curEventPicObj.ToString()))
+                    {
+                        curEventPic = (string)events["eventPic"][curEventIn];
+                    }
+
+
+                    <a href="/EventDetail?eventId=@curEventIdEncrypted">
+                        <div id="event-@curEventIdEncrypted" class="eventMainBox">
+                            <div class="imgContainer">
+                                <img src="/Content/kardoPasso/img/uploads/@curEventPic" alt="" />
+                            </div>
+                            <div class="eMBTxtBox-overlay">
+                                <div class="eMBTxtBox">
+                                    <div class="eMBTxtBox-left">@curEventHeader</div>
+                                    <div class="eMBTxtBox-right">
+                                        <div class="txtBoxL-Day">@curDate.ToString("dd")</div>
+                                        <div class="txtBoxL-Month">@curDate.ToString("MMM")</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                }
+            }
+            else
+            {
+                <h1>There is no result!</h1>
+            }
+        </div>
+        <div class="clear-both"></div>
+    </div>
+    <div class="clear-both"></div>
+</div>
+<div class="clear-both"></div>
+
+
+@section script
+{
+    <script src="/Content/kardoPasso/assets\simplepicker-master\js\simplepicker.js"></script>
+    <script src="/Content/kardoPasso/js\default.js"></script>
+    <!-- Swiper JS -->
+    <script src="/Content/kardoPasso/assets/swiper-3.3.1/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 2500,
+            autoplayDisableOnInteraction: false,
+            loop: true,
+            keyboardControl: true,
+            autoHeight: true,
+            effect: 'coverflow',
+            speed: 1000
+        });
+    </script>
+}

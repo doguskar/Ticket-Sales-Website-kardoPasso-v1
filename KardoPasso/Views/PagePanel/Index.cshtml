@@ -1,0 +1,657 @@
+﻿
+@{
+    ViewBag.Title = "Page Panel";
+    Dictionary<string, Object> userInfos;
+    userInfos = ViewBag.userInfos;
+    if (userInfos != null)
+    {
+        if (string.IsNullOrEmpty(userInfos["profilPic"].ToString()))
+        {
+            userInfos["profilPic"] = "profil_pic.png";
+        }
+    }
+    
+    Dictionary<string, List<Object>> teams;
+    teams = ViewBag.teams;
+    Dictionary<string, List<Object>> stadiums;
+    stadiums = ViewBag.stadiums;
+    Dictionary<string, List<Object>> sportTypes;
+    sportTypes = ViewBag.sportTypes;
+    Dictionary<string, List<Object>> users;
+    users = ViewBag.users;
+    Dictionary<string, List<Object>> events;
+    events = ViewBag.events;
+    Dictionary<string, List<Object>> roles;
+    roles = ViewBag.roles;
+    int newusers = ViewBag.newUsers;
+    int newKps = ViewBag.newKps;
+}
+
+@section head
+{
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/simplepicker-master/css/simplepicker.css">
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .kardoPasso-content .row {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+}
+
+<div class="kardoPasso-content">
+    <div class="shortcuts-menu">
+        <nav>
+            <ul>
+                <li><a href="#statistics" id="load_statistics">Statistics</a></li>
+                @if (userInfos != null && (bool)userInfos["can_insert_event"])
+                {
+                    <li><a href="javascript:;" class="open-dk-popup" data-id="addEventPopup">Add Event</a></li>
+                }
+                <li><a href="#eventsTableContainer">Events</a></li>
+                @if (userInfos != null && (bool)userInfos["can_insert_stadium"])
+                {
+                    <li><a href="javascript:;" class="open-dk-popup" data-id="addStadiumPopup">Add Stadium</a></li>
+                }
+                <li><a href="#stadiumsTableContainer">Stadiums</a></li>
+                @if (userInfos != null && (bool)userInfos["can_insert_team"])
+                {
+                    <li><a href="javascript:;" class="open-dk-popup" data-id="addTeamPopup">Add Team</a></li>
+                }
+                <li><a href="#teamsTableContainer">Teams</a></li>                
+                @if (userInfos != null && (bool)userInfos["can_insert_team"])
+                {
+                    <li><a href="javascript:;" class="open-dk-popup" data-id="addSportTypePopup">Add Sport Type</a></li>
+                }
+                <li><a href="#sportTypesTableContainer">Sport Types</a></li>                
+                @if (userInfos != null && (bool)userInfos["can_modify_users"])
+                {
+                    <li><a href="#usersTableContainer">Users</a></li>
+                }              
+                @if (userInfos != null && (bool)userInfos["can_edit_permissions"])
+                {
+                    <li><a href="/Permissions">Edit Permissions</a></li>
+                }
+            </ul>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <section class="dk-widget-box">
+                <div class="dk-widget-logo"><i class="fa fa-user"></i></div>
+                <div class="dk-widget-content">
+                    <span class="count countUp" id="newMembers" data-count="@newusers">0</span>
+                    <span class="info">New members in the last year</span>
+                </div>
+            </section>
+        </div>
+        <div class="col-xs-6">
+            <section class="dk-widget-box bg-primary">
+                <div class="dk-widget-logo"><i class="fa fa-id-card"></i></div>
+                <div class="dk-widget-content">
+                    <span class="count countUp" id="newKardoPassos" data-count="@newKps">0</span>
+                    <span class="info">Number of people purchased kardoPasso in the last year</span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <h1 id="statistics">Statistics</h1>
+    <div id="statistics_container">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div id="HC_topTeams" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="HC_topEvents" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div id="HC_topStadiums" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+            </div>
+            <div class="col-md-7">
+                <div id="HC_numOfEvents" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Tables</h1>
+    <div class="row" id="eventsTableContainer">
+        <div class="col-xs-12 pad-l-15 pad-r-15">
+            <div class="dk-table-container">
+                <h1>Events</h1>
+                <table class="dk-table" id="eventsTable">
+                    <thead>
+                        <tr>
+                            <th>Teams</th>
+                            <th>Time</th>
+                            <th>Where</th>
+                            @if (userInfos != null && (bool)userInfos["can_examine_salesDetails"])
+                            {
+                                <th>Details</th>
+                            }
+                            @if (userInfos != null && (bool)userInfos["can_modify_event"])
+                            {
+                                <th>Edit</th>
+                                <th>Remove</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                            @if(events.Count > 0)
+                            {
+                                for (int curIn = 0; curIn < events["eventId"].Count; curIn++)
+                                {
+                                    string curEventHeader = (string)events["hostTeamName"][curIn] + " - " + (string)events["otherTeamName"][curIn];
+                                    <tr>
+                                        <td>@curEventHeader</td>
+                                        <td>@(((DateTime)events["eventDate"][curIn]).ToString("yyyy-MM-dd HH:mm"))</td>
+                                        <td>@events["stadiumName"][curIn]</td>
+                                        @if (userInfos != null && (bool)userInfos["can_examine_salesDetails"])
+                                        {
+                                            <td><a href="/EventDetailAdmin?eventId=@events["eventId"][curIn]"><i class="fa fa-info-circle"></i></a></td>
+                                        }
+                                        @if (userInfos != null && (bool)userInfos["can_modify_event"])
+                                        {
+                                            <td><a href="javascript:;" class="open-dk-popup" data-id="addEventPopup" data-update="true" data-key="event" data-dataid="@events["eventId"][curIn]"><i class="fa fa-edit"></i></a></td>
+                                            <td><a href="javascript:;" class="dk-dynamic-popup"
+                                                   data-content="Do you want to remove the event?"
+                                                   data-theme="confirm"
+                                                   data-operation="deleteEvent"
+                                                   data-datas="dataid_@events["eventId"][curIn]"
+                                                   ><i class="fa fa-remove"></i></a></td>
+                                        }
+                                    </tr>
+                                }
+                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @if (userInfos != null && (bool)userInfos["can_modify_users"])
+    {
+        <hr />
+        <div class="row" id="usersTableContainer">
+            <div class="col-xs-12 pad-l-15 pad-r-15">
+                <div class="dk-table-container">
+                    <h1>Users</h1>
+                    <table class="dk-table" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Mail</th>
+                                <th>Role</th>
+                                <th>Balance</th>
+                                <th>Total Tickets</th>
+                                <th>Edit</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (users.Count > 0)
+                            {
+                                for (int curIn = 0; curIn < users["userId"].Count; curIn++)
+                                {
+                                    string curUserFullName = (string)users["name"][curIn] + " " + (string)users["surname"][curIn];
+                                
+                                    <tr>
+                                        <td>@users["username"][curIn]</td>
+                                        <td>@curUserFullName</td>
+                                        <td>@users["email"][curIn]</td>
+                                        <td>@users["roleName"][curIn]</td>
+                                        <td>@users["balance"][curIn]</td>
+                                        <td>@users["totalTicket"][curIn]</td>
+                                        <td><a href="javascript:;" class="open-dk-popup" data-id="updateUserPopup" data-update="true" data-key="user" data-dataid="@users["userId"][curIn]"><i class="fa fa-edit"></i></a></td>
+                                        <td><a href="javascript:;" class="dk-dynamic-popup"
+                                               data-content="Do you want to remove the user?"
+                                               data-theme="confirm"
+                                               data-operation="deleteUser"
+                                               data-datas="dataid_@users["userId"][curIn]"
+                                               ><i class="fa fa-remove"></i></a></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    <hr />
+    <div class="row" id="stadiumsTableContainer">
+        <div class="col-xs-12 pad-l-15 pad-r-15">
+            <div class="dk-table-container">
+                <h1>Stadiums</h1>
+                <table class="dk-table" id="stadiumsTable">
+                    <thead>
+                        <tr>
+                            <th>Stadium</th>
+                            <th>City / Country</th>
+                            <th>Number Of Its Sections</th>
+                            <th>Capacity</th>
+                            @if (userInfos != null && (bool)userInfos["can_modify_stadium"])
+                            {
+                                <th>Edit</th>
+                                <th>Remove</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (stadiums.Count > 0)
+                        {
+                            for (int curIn = 0; curIn < stadiums["stadiumId"].Count; curIn++)
+                            {
+
+                                string curCityCountry = (string)stadiums["city"][curIn] + " / " + (string)stadiums["country"][curIn];
+                                <tr>
+                                    <td>@stadiums["stadiumName"][curIn]</td>
+                                    <td style="text-transform:capitalize">@curCityCountry</td>
+                                    <td>@stadiums["totalSection"][curIn]</td>
+                                    <td>@stadiums["totalCapacity"][curIn]</td>
+                                    @if (userInfos != null && (bool)userInfos["can_modify_stadium"])
+                                    {
+                                        <td><a href="/EditStadium?stadiumId=@stadiums["stadiumId"][curIn]"><i class="fa fa-edit"></i></a></td>
+                                        <td><a href="javascript:;" class="dk-dynamic-popup"
+                                               data-content="Do you want to remove the stadium?"
+                                               data-theme="confirm"
+                                               data-operation="deleteStadium"
+                                               data-datas="dataid_@stadiums["stadiumId"][curIn]"
+                                               ><i class="fa fa-remove"></i></a></td>
+                                    }
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6 pad-l-15 pad-r-15" id="teamsTableContainer">
+            <div class="dk-table-container">
+                <h1>Teams</h1>
+                <table class="dk-table" id="teamsTable">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Sport Type</th>
+                            @if (userInfos != null && (bool)userInfos["can_modify_team"])
+                            {
+                                <th>Edit</th>
+                                <th>Remove</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (teams.Count > 0)
+                        {
+                            for (int curIn = 0; curIn < teams["teamId"].Count; curIn++)
+                            {
+                                <tr>
+                                    <td>@teams["teamName"][curIn]</td>
+                                    <td>@teams["sportType"][curIn]</td>
+                                    @if (userInfos != null && (bool)userInfos["can_modify_team"])
+                                    {
+                                        <td><a href="javascript:;" class="open-dk-popup" data-id="addTeamPopup" data-update="true" data-key="team" data-dataid="@teams["teamId"][curIn]"><i class="fa fa-edit"></i></a></td>
+                                        <td><a href="javascript:;" class="dk-dynamic-popup"
+                                               data-content="Do you want to remove the team?"
+                                               data-theme="confirm"
+                                               data-operation="deleteTeam"
+                                               data-datas="dataid_@teams["teamId"][curIn]"
+                                               ><i class="fa fa-remove"></i></a></td>
+                                    }
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-6 pad-l-15 pad-r-15" id="sportTypesTableContainer">
+            <div class="dk-table-container">
+                <h1>Sport Types</h1>
+                <table class="dk-table" id="sportTypesTable">
+                    <thead>
+                        <tr>
+                            <th>Sport Type</th>
+                            @if (userInfos != null && (bool)userInfos["can_modify_team"])
+                            {
+                                <th>Edit</th>
+                                <th>Remove</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (sportTypes.Count > 0)
+                        {
+                            for (int curIn = 0; curIn < sportTypes["sportTypeId"].Count; curIn++)
+                            {
+                                <tr>
+                                    <td>@sportTypes["sportType"][curIn]</td>
+                                    @if (userInfos != null && (bool)userInfos["can_modify_team"])
+                                    {
+                                        <td><a href="javascript:;" class="open-dk-popup" data-id="addSportTypePopup" data-update="true" data-key="sportType" data-dataid="@sportTypes["sportTypeId"][curIn]"><i class="fa fa-edit"></i></a></td>
+                                        <td><a href="javascript:;" class="dk-dynamic-popup"
+                                               data-content="Do you want to remove the sport type?"
+                                               data-theme="confirm"
+                                               data-operation="deleteSportType"
+                                               data-datas="dataid_@sportTypes["sportTypeId"][curIn]"
+                                               ><i class="fa fa-remove"></i></a></td>
+                                    }
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section outOfArticle
+{
+@if (userInfos != null && (bool)userInfos["can_insert_event"])
+{
+    <div id="addEventPopup" class="dk-popup-overlay closeable-popup">
+        <div class="middle">
+            <div class="dk-popup bg-primary" data-id="addEventPopup">
+                <div class="title">
+                    <span class="text">Add Event</span>
+                    <span class="popup-close close-dk-popup" data-id="addEventPopup"><i class="fa fa-times"></i></span>
+                </div>
+                <form action="" id="addEvent_form" method="post" enctype="multipart/form-data" accept-charset="image/*">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="addEvent_warning" class="clr-danger"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="addEvent_hostTeam">Host Team:</label><br />
+                                <select name="" id="addEvent_hostTeam">
+                                    @for (int curIn = 0; curIn < teams["teamId"].Count; curIn++)
+                                    {
+                                        <option value="@teams["teamId"][curIn]" data-sporttype="@teams["sportTypeId"][curIn]">@teams["teamName"][curIn]</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="addEvent_otherTeam">Other Team:</label><br />
+                                <select name="" id="addEvent_otherTeam">
+                                    @for (int curIn = 0; curIn < teams["teamId"].Count; curIn++)
+                                    {
+                                        <option value="@teams["teamId"][curIn]" data-sporttype="@teams["sportTypeId"][curIn]">@teams["teamName"][curIn]</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="addEvent_stadium">Stadium:</label><br />
+                                <select name="" id="addEvent_stadium">
+                                    @for (int curIn = 0; curIn < stadiums["stadiumId"].Count; curIn++)
+                                    {
+                                        <option value="@stadiums["stadiumId"][curIn]">@stadiums["stadiumName"][curIn]</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="addEvent_date">Date:</label><br />
+                                <input type="button" id="addEvent_date" value="Click to Select" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label for="addEvent_description">Description:</label><br />
+                                <textarea name="" id="addEvent_description" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="addEvent_price">Min Ticket Price:</label><br />
+                                <input type="number" id="addEvent_price" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="addEvent_pic">Event Pic:</label><br />
+                                <input type="file" id="addEvent_pic" name="addEvent_pic" accept="image/*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addEventPopup" value="Cancel" />
+                        <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addEventPopup" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+}
+@if (userInfos != null && (bool)userInfos["can_insert_stadium"])
+{
+    <div id="addStadiumPopup" class="dk-popup-overlay closeable-popup">
+        <div class="middle">
+            <div class="dk-popup bg-primary" data-id="addStadiumPopup">
+                <div class="title">
+                    <span class="text">Add Stadium</span>
+                    <span class="popup-close close-dk-popup" data-id="addStadiumPopup"><i class="fa fa-times"></i></span>
+                </div>
+                <form action="" id="addStadium_form" method="post" enctype="multipart/form-data" accept-charset="image/*">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="addStadium_warning" class="clr-danger"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="addStadium_name">Stadium Name:</label><br />
+                                <input type="text" id="addStadium_name" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="">Stadium Suitable For:</label><br />
+                                <select name="" id="addStadium_sportType">
+                                    @for (int curIn = 0; curIn < sportTypes["sportTypeId"].Count; curIn++)
+                                    {
+                                        <option value="@sportTypes["sportTypeId"][curIn]">@sportTypes["sportType"][curIn]</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label for="addStadium_pic">Stadium Plan Pic:</label><br />
+                                <input type="file" id="addStadium_pic" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="addStadium_country">Country:</label><br />
+                                <input type="text" id="addStadium_country" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="addStadium_state">State:</label><br />
+                                <input type="text" id="addStadium_state" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="addStadium_city">City:</label><br />
+                                <input type="text" id="addStadium_city" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="addStadium_location">Location:</label><br />
+                                <input type="text" id="addStadium_location" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label for="addStadium_streetAdd">Street Address:</label><br />
+                                <textarea name="" id="addStadium_streetAdd" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addStadiumPopup" value="Cancel" />
+                        <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addStadiumPopup" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+@if (userInfos != null && (bool)userInfos["can_insert_team"])
+{
+    <div id="addTeamPopup" class="dk-popup-overlay closeable-popup">
+        <div class="middle">
+            <div class="dk-popup bg-primary" data-id="addTeamPopup">
+                <div class="title">
+                    <span class="text">Add Team</span>
+                    <span class="popup-close close-dk-popup" data-id="addTeamPopup"><i class="fa fa-times"></i></span>
+                </div>
+                <form action="" id="addTeam_form" method="post">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="addTeam_warning" class="clr-danger"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="addTeam_name">Team Name:</label><br />
+                                <input type="text" id="addTeam_name" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="addTeam_sportType">Team Sport Type:</label><br />
+                                <select name="" id="addTeam_sportType">
+                                    @for (int curIn = 0; curIn < sportTypes["sportTypeId"].Count; curIn++)
+                                    {
+                                        <option value="@sportTypes["sportTypeId"][curIn]">@sportTypes["sportType"][curIn]</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addTeamPopup" value="Cancel" />
+                        <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addTeamPopup" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+}
+@if (userInfos != null && (bool)userInfos["can_insert_team"])
+{
+    <div id="addSportTypePopup" class="dk-popup-overlay closeable-popup">
+        <div class="middle">
+            <div class="dk-popup bg-primary" data-id="addSportTypePopup">
+                <div class="title">
+                    <span class="text">Add Sport Type</span>
+                    <span class="popup-close close-dk-popup" data-id="addSportTypePopup"><i class="fa fa-times"></i></span>
+                </div>
+                <form action="" id="addSportType_form" method="post">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="addSportType_warning" class="clr-danger"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label for="addSportType_name">Sport Type Name:</label><br />
+                                <input type="text" id="addSportType_name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addSportTypePopup" value="Cancel" />
+                        <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addSportTypePopup" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+@if (userInfos != null && (bool)userInfos["can_modify_users"])
+{
+<div id="updateUserPopup" class="dk-popup-overlay closeable-popup">
+    <div class="middle">
+        <div class="dk-popup bg-primary" data-id="updateUserPopup">
+            <div class="title">
+                <span class="text">Update User</span>
+                <span class="popup-close close-dk-popup" data-id="updateUserPopup"><i class="fa fa-times"></i></span>
+            </div>
+            <form action="" id="updateUser_form" method="post">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="updateUser_warning" class="clr-danger"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="updateUser_role">User Role:</label><br />
+                            <select name="" id="updateUser_role">
+                                @for (int curIn = 0; curIn < roles["roleId"].Count; curIn++)
+                                {
+                                    <option value="@roles["roleId"][curIn]">@roles["roleName"][curIn]</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="updateUserPopup" value="Cancel" />
+                    <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="updateUserPopup" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    
+}
+}
+
+@section outOfContainer
+{
+    <a href="#" id="go-top-of-page"><i class="fa fa-chevron-up"></i></a>
+}
+
+@section script
+{
+    <script src="/Content/kardoPasso/assets/count/count.js"></script>
+    <script src="/Content/kardoPasso/assets/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Content/kardoPasso/assets\simplepicker-master\js\simplepicker.js"></script>
+    <script src="/Content/kardoPasso/js/panelPage.js"></script>
+
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/highcharts.js"></script>
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/modules/series-label.js"></script>
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/modules/exporting.js"></script>
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/modules/data.js"></script>
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/modules/drilldown.js"></script>
+    <script type="text/javascript">
+        $(document).ready(showStatistics());
+    </script>
+}
+

@@ -1,0 +1,283 @@
+﻿
+@{
+    
+    Dictionary<string, Object> theStadium;
+    Dictionary<string, List<Object>> ticketInfos;
+    Dictionary<string, List<Object>> sportTypes;
+    Dictionary<string, List<Object>> theSSections;
+    Dictionary<string, List<Object>> secCategories;
+    
+    sportTypes = ViewBag.sportTypes;
+    theStadium = ViewBag.theStadium;
+    theSSections = ViewBag.theSSections;
+    ticketInfos = ViewBag.ticketInfos;
+    secCategories = ViewBag.secCategories;
+
+    string stadiumAddr = (string)theStadium["stadiumName"] + ", " + (string)theStadium["city"] + ", " + (string)theStadium["country"];
+    string googleMapsQuery = Server.UrlEncode(stadiumAddr);
+
+    ViewBag.Title = theStadium["stadiumName"];
+}
+@section head
+{
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+}
+<div class="kardoPasso-content">
+    <div class="shortcuts-menu">
+        <nav>
+            <ul>
+                <li><a href="PagePanel/#stadiumsTableContainer">Go Back</a></li>
+                <li><a href="javascript:;" class="open-dk-popup" data-id="addSectionPopup">Add Section</a></li>
+                <li><a href="javascript:;" class="open-dk-popup" data-id="addStadiumPopup" data-update="true" data-key="stadium" data-dataid="@theStadium["stadiumId"]">Edit Stadium</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br />
+    <h1>Vodefone Arena</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="dk-table-container">
+                <h1>Sections</h1>
+                <table class="dk-table" id="sectionsTable">
+                    <thead>
+                        <tr>
+                            <th>Section Name</th>
+                            <th>Capacity</th>
+                            <th>Price Ratio</th>
+                            <th>Edit</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (theSSections.Count > 0)
+                        {
+                            for (int curIn = 0; curIn < theSSections["sectionId"].Count; curIn++)
+                            {  
+                                <tr>
+                                    <td>@theSSections["sectionName"][curIn]</td>
+                                    <td>@theSSections["capacity"][curIn]</td>
+                                    <td>@theSSections["priceRatio"][curIn]</td>
+                                    <td><a href="javascript:;" class="open-dk-popup" data-id="addSectionPopup" data-update="true" data-key="section" data-dataid="@theSSections["sectionId"][curIn]"><i class="fa fa-edit"></i></a></td>
+                                    <td><a href="javascript:;" class="dk-dynamic-popup"
+                                           data-content="Do you want to remove the section?"
+                                           data-theme="confirm"
+                                           data-operation="deleteSection"
+                                           data-datas="dataid_@theSSections["sectionId"][curIn]"
+                                           ><i class="fa fa-remove"></i></a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h3>Stadium Plan</h3>
+            <div class="res-img">
+                <img src="/Content/kardoPasso/img/uploads/@theStadium["stadiumPlan"]" alt="" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Stadium Address</h3>
+            <div style="width: 100%"><iframe width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=@googleMapsQuery+()&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Plot a route map</a></iframe></div><br />
+        </div>
+    </div>
+</div>
+
+@section outOfArticle{
+<div id="addStadiumPopup" class="dk-popup-overlay closeable-popup">
+    <div class="middle">
+        <div class="dk-popup bg-primary" data-id="addStadiumPopup">
+            <div class="title">
+                <span class="text">Add Stadium</span>
+                <span class="popup-close close-dk-popup" data-id="addStadiumPopup"><i class="fa fa-times"></i></span>
+            </div>
+            <form action="" id="addStadium_form" method="post" enctype="multipart/form-data" accept-charset="image/*">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="addStadium_warning" class="clr-danger"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="addStadium_name">Stadium Name:</label><br />
+                            <input type="text" id="addStadium_name" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="">Stadium Suitable For:</label><br />
+                            <select name="" id="addStadium_sportType">
+                                @for (int curIn = 0; curIn < sportTypes["sportTypeId"].Count; curIn++)
+                                {
+                                    <option value="@sportTypes["sportTypeId"][curIn]">@sportTypes["sportType"][curIn]</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="addStadium_pic">Stadium Plan Pic:</label><br />
+                            <input type="file" id="addStadium_pic" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="addStadium_country">Country:</label><br />
+                            <input type="text" id="addStadium_country" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="addStadium_state">State:</label><br />
+                            <input type="text" id="addStadium_state" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="addStadium_city">City:</label><br />
+                            <input type="text" id="addStadium_city" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="addStadium_location">Location:</label><br />
+                            <input type="text" id="addStadium_location" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="addStadium_streetAdd">Street Address:</label><br />
+                            <textarea name="" id="addStadium_streetAdd" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addStadiumPopup" value="Cancel" />
+                    <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addStadiumPopup" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="addSectionPopup" class="dk-popup-overlay closeable-popup">
+    <div class="middle">
+        <div class="dk-popup bg-primary" data-id="addSectionPopup">
+            <div class="title">
+                <span class="text">Add Section</span>
+                <span class="popup-close close-dk-popup" data-id="addSectionPopup"><i class="fa fa-times"></i></span>
+            </div>
+            <form action="" id="addSection_form" method="post">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="addSection_warning" class="clr-danger"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="addSection_name">Section Name:</label><br />
+                            <input type="text" id="addSection_name" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="editSection_name">Section Capacity:</label><br />
+                            <input type="number" id="addSection_capacity" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="">Category:</label><br />
+                            <select name="" id="addSection_category">
+                                @for (int curIn = 0; curIn < secCategories["categoryId"].Count; curIn++)
+                                {
+                                    <option value="@secCategories["categoryId"][curIn]">@secCategories["categoryName"][curIn] - @(((decimal)secCategories["priceRatio"][curIn]).ToString("F"))</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="footer">
+                    <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addSectionPopup" value="Cancel" />
+                    <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addSectionPopup" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+}
+
+@section script{
+    <script src="/Content/kardoPasso/assets/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Content/kardoPasso/js/editStadium.js"></script>
+
+    <script>
+        $('#addSection_form').on('submit', function () {debugger
+            var name = $('#addSection_name').val();
+            if (name.length < 2 || name.length > 50) {
+                $('#addSection_warning').html("Section's name contains 2-50 chars.");
+                return;
+            }
+            var capacity = $('#addSection_capacity').val();
+            if (capacity.length < 2) {
+                $('#addSection_warning').html("Capacity must be min 10.");
+                return;
+            }
+            var category = $('#addSection_category').val();
+            var update = $('#addSection_form').data("update");
+            var dataid = $('#addSection_form').data("dataid");
+            if (update != undefined && update) {
+                if (dataid == undefined) {
+                    alert("DataId error!");
+                    return;
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '/EditStadium/updateSection',
+                    data: {
+                        "name": name,
+                        "capacity": capacity,
+                        "categoryId": category,
+                        "sectionId": dataid
+                    },
+                    success: function (e) {
+                        if (e == "True") {
+                            alert("Section have been updated.");
+                            window.location.reload();
+                        }
+                        else {
+                            alert("An error occurred!");
+                        }
+                    },
+                    error: function () { alert("An error occurred!"); }
+                })
+            }
+            else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/EditStadium/insertSection',
+                    data: {
+                        "name": name,
+                        "capacity": capacity,
+                        "categoryId": category,
+                        "stadiumId": '@theStadium["stadiumId"]'
+                    },
+                    success: function (e) {
+                        if (e == "True") {
+                            alert("Section have been added.");
+                            window.location.reload();
+                        }
+                        else {
+                            alert("An error occurred!");
+                        }
+                    },
+                    error: function () { alert("An error occurred!"); }
+                })
+            }
+        })
+    </script>
+}
+

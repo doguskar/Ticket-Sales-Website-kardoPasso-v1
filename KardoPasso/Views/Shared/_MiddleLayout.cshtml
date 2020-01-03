@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/kardoPasso/img/systemPics/kardo-icon.png" />
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/dk-style/css/dk-style.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/css/kardo.css">
+    <style type="text/css">
+        body {
+            background: transparent;
+        }
+    </style>   
+    @RenderSection("head", false)
+
+</head>
+
+<body>
+    <div class="dk-container">
+        <article class="content-section-table bg-img">
+            <div class="middle shadow">
+                @RenderBody()
+            </div>
+        </article>
+        
+        <footer class="footer-section login-page">
+            <ul>
+                <li>©2018 Kardo</li>
+                <li>©2018 Kardo2</li>
+                <li><a href="#">©2018 Kardo3</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <script type='text/javascript' src='/Content/kardoPasso/assets/jquery/jquery-3.2.1.min.js'></script>
+    <script src="/Content/kardoPasso/assets/dk-style/js/register-box.js"></script>
+    <script src="/Content/kardoPasso/assets/dk-style/js/dk-regex.js"></script>
+    <script src="/Content/kardoPasso/assets/dk-style/js/input-effect.js"></script>
+    @RenderSection("script", false)
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+﻿@{
+    Dictionary<string, Object> theEvent;
+    Dictionary<string, List<Object>> ticketInfos;
+
+    theEvent = ViewBag.theEvent;
+    ticketInfos = ViewBag.ticketInfos;
+
+    string eventHeader = (string)theEvent["hostTeamName"] + " - " + (string)theEvent["otherTeamName"];
+    int totalSold = 0,  totalLeft = 0;
+    decimal totalRevenue = 0;
+
+    ViewBag.Title = eventHeader;
+}
+
+
+@section head
+{
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/simplepicker-master/css/simplepicker.css">
+}
+
+<div class="kardoPasso-content">
+    <div class="shortcuts-menu">
+        <nav>
+            <ul>
+                <li><a href="/PagePanel#eventsTableContainer">Go Back</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br />
+    <h1>@eventHeader</h1>
+    <h2>Ticket Details</h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="highchart-pie-container" style="width:100%; height: 400px; margin: 0 auto"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Stadium Plan</h3>
+            <div class="res-img">
+                <img src="/Content/kardoPasso/img/uploads/@theEvent["stadiumPlan"]" alt="" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dk-table-container">
+                <h1>Sections</h1>
+                <table class="dk-table" id="ticketDetailTable">
+                    <thead>
+                        <tr>
+                            <th>Section</th>
+                            <th>Sold</th>
+                            <th>Left</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                             
+                            @if (ticketInfos.Count > 0)
+                            {
+                                for (int curIn = 0; curIn < ticketInfos["sectionId"].Count; curIn++)
+                                {
+                                    <tr>
+                                        <td>@ticketInfos["sectionName"][curIn]</td>
+                                        @{
+                                            Object soldTicObj = ticketInfos["soldTicket"][curIn];
+                                            Object leftTicObj = ticketInfos["leftTicket"][curIn];
+                                            int soldTic, leftTic;
+                                            if (string.IsNullOrEmpty(soldTicObj.ToString()))
+                                            {
+                                                soldTic = 0 ;
+                                            }
+                                            else
+                                            {
+                                                soldTic = (int) ticketInfos["soldTicket"][curIn] ;
+                                                totalSold += soldTic;
+                                                decimal priceRatio = Convert.ToDecimal(ticketInfos["priceRatio"][curIn]);
+                                                decimal minPrice = Convert.ToDecimal(ticketInfos["minTicketPrice"][curIn]);
+                                                totalRevenue += (soldTic * priceRatio * minPrice);
+                                        
+                                            }
+                                            if (string.IsNullOrEmpty(leftTicObj.ToString()))
+                                            {
+                                                Object obj = ticketInfos["capacity"][curIn];
+                                                leftTic = Convert.ToInt32(obj) ;
+                                                totalLeft += leftTic;
+                                            }
+                                            else
+                                            {
+                                                leftTic = (int) ticketInfos["leftTicket"][curIn];
+                                                totalLeft += leftTic;
+                                            }
+                                        }
+                                
+                                        <td>@soldTic</td>
+                                        <td>@leftTic</td>
+                                    </tr>
+                                }
+                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" style="font-size:24px; text-align:center; margin-top:50px;">
+            <label>Current Total Revenue: </label><span>@totalRevenue.ToString("F") $</span>
+        </div>
+    </div>
+</div>
+
+
+@section script
+{
+    <script src="/Content/kardoPasso/assets/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Content/kardoPasso/assets\simplepicker-master\js\simplepicker.js"></script>
+
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/highcharts.js"></script>
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/modules/exporting.js"></script>
+    <script src="/Content/kardoPasso/assets/highcharts-6.0.4/code/modules/export-data.js"></script>
+
+    <script type="text/javascript">
+        var sold = parseInt('@totalSold');
+        var left = parseInt('@totalLeft');
+        Highcharts.chart('highchart-pie-container', {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Ticket Details'
+            },
+            plotOptions: {
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}: {point.y}'
+                    }
+                }
+            },
+            series: [{
+                colorByPoint: true,
+                data: [{
+                    name: 'Sold Ticket',
+                    y: sold
+                }, {
+                    name: 'Left Ticket',
+                    y: left
+                }
+                ]
+            }]
+        });
+        /**********************************/
+        $(document).ready(function () {
+            $('#ticketDetailTable').DataTable({
+                "lengthMenu": [[20, 50, -1], [20, 50, "All"]]
+            });
+        });
+    </script>    
+}

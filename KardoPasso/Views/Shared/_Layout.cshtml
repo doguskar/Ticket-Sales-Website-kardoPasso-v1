@@ -1,0 +1,324 @@
+﻿@{
+    Dictionary<string, Object> userInfos;
+    userInfos = ViewBag.userInfos;
+    if (userInfos != null)
+    {
+        if (string.IsNullOrEmpty(userInfos["profilPic"].ToString()))
+        {
+            userInfos["profilPic"] = "profil_pic.png";
+        }
+    }
+    else if (userInfos == null && (Session["KardoUserId"] != null && Session["KardoUserName"] != null))
+    {
+        
+    }
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/kardoPasso/img/systemPics/kardo-icon.png" />
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/gritter/css/jquery.gritter.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/daireEfekt/css/daireEfekt.css">
+    <!--
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/dk-diagrams/css/diagrams-style.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/dk-diagrams/css/uml-java.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/simplepicker-master/css/simplepicker.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/youDontNeedJavaScript/carousel-1.css">-->
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/dk-style/css/dk-style.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/css/kardo.css">
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/css/kardoPasso.css">
+    
+    @RenderSection("head", false)
+
+</head>
+
+<body>
+    <div class="dk-container">
+        <div id="resultForDisplayChanging"></div>
+        <!-- DK-TOP-SECTION -->
+        <header class="dk-top-section">
+
+            <div class="navbar-icon sidebar-close"><i class="fa fa-bars"></i></div>
+
+            <div class="kardo-logo">
+                <a href="/">
+                    <img src="/Content/kardoPasso/img/systemPics/kardo.png" alt="Kardo" class="hidden-xs" />
+                    <img src="/Content/kardoPasso/img/systemPics/kardo-k.png" alt="Kardo" class="hidden-lg hidden-md hidden-sm small" />
+                    <span class="logo-sub">Passo</span>
+                </a>
+            </div>
+
+            <div class="log-section">
+                @if (Session["KardoUserId"] != null && Session["KardoUserName"] != null)
+                {
+                    <span class="cursor-p hidden-xs dk-dropdown" data-dropdown="dk-user-box">	<img src="/Content/kardoPasso/img/userProfilPics/@userInfos["profilPic"]" alt=" " />		</span>
+                    <a href="#" class="hidden-lg hidden-md hidden-sm">	<img src="/Content/kardoPasso/img/userProfilPics/@userInfos["profilPic"]" alt="" />		</a>
+                
+                    
+                    <div class="log-nav hidden-xs">
+                        <span class="dk-dropdown-btn dk-dropdown" data-dropdown="dk-apps-box">
+                            <span class="dk-icon"><i class="fa fa-ellipsis-v"></i></span>
+                        </span>
+                    </div>
+                    
+                }
+                else
+                {
+                    <span class="btn-log hidden-xs open-dk-popup" data-id="dk-popup-login">
+                        <!--<a href="javascript:;" class="dk-dynamic-popup" data-title="Oturum Açma"
+                                                                       data-iframe="true"
+                                                                       data-content="/Login/popupIndex"
+                                                                       data-type="alert"
+                                                                       data-theme="bg-primary"
+                                                                       data-typeofremove="d_remove">
+                            Oturum Aç
+                        </a>-->
+                        <a href="/Login">Oturum Aç</a>
+                    </span>
+                }
+            </div>
+            @if (Session["KardoUserId"] != null && Session["KardoUserName"] != null)
+            { 
+                <!-- kardoPasso-balance -->
+                if (!string.IsNullOrEmpty(@userInfos["balance"].ToString()))
+                {
+                    <div class="kardoPasso-balance hidden-xs">
+                        <a href="/UserProfile"><i class="fa fa-plus"></i></a>
+                        <span><b>Balance:</b></span>
+                        <span id="user_balance">@(((decimal)userInfos["balance"]).ToString("F"))$</span>
+                    </div>
+                }
+                else
+                {
+                    <div class="get-kardoPasso hidden-xs">
+                        <span class="btn-log"><a href="javascript:;" class="open-dk-popup" data-id="getKardoPassoPopup">Get KardoPasso</a></span>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="get-kardoPasso">
+                    <span class="btn-log"><a href="/Login">Get KardoPasso</a></span>
+                </div>
+            }
+            @if (Session["KardoUserId"] != null && Session["KardoUserName"] != null)
+            {
+                <!-- dk-apps-box -->
+                <div id="dk-apps-box" class="dk-apps-box hidden-xs">
+                    <div class="aplications">
+                        <div class="aplications-links">
+                            <a href="#"><img src="/Content/kardoPasso/img/systemPics/kardo-icon.png" alt="" /><span class="text">Kardo</span></a>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="all-app">Daha Fazlası</a>
+                </div>
+                <!-- dk-user-box -->
+                <div id="dk-user-box" class="dk-user-box hidden-xs">
+                    <div class="active-account">
+                        <div class="user-photo">
+                            <img src="/Content/kardoPasso/img/userProfilPics/@userInfos["profilPic"]" alt="" />
+                            <a href="javascript:;">Change Pic</a>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-rname">@userInfos["name"] @userInfos["surname"]</div>
+                            <div class="username">&#64;@userInfos["username"]</div>
+                            <div class="user-profil-link"><a href="/UserProfile" class="dk-btn dk-btn-primary">Profile Git</a></div>
+                        </div>
+                        <div class="clear-both"></div>
+                    </div>
+                    <div class="other-accounts" id="other-accounts"></div>
+                    <div class="dk-user-box-log">
+                        <div class="row margin-0">
+                            <div class="col-xs-6 pad-l-15"><a href="/Login" class="dk-btn dk-btn-wide dk-btn-default">Add Account</a></div>
+                            <div class="col-xs-6 pad-r-15"><a href="javascript:;" id="logout-btn" class="dk-btn dk-btn-wide dk-btn-default">Log Off</a></div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <nav class="menu-horizontal hidden-sm hidden-xs">
+                <ul>
+                    <li><a href="/">HomePage</a></li>
+                    @if (userInfos != null && (bool)userInfos["can_enter_pagePanel"])
+                    {
+                        <li><a href="/PagePanel">Page Panel</a></li>
+                    }
+                </ul>
+            </nav>
+            
+            <!---->
+
+            <div class="clear-both"></div>
+        </header>
+
+
+        <!-- DK-TOP-SECTION END -->
+        <!--- sidebar-menu -->
+        <nav class="menu-section" id="accordion">
+            <div class="dk-sidebar-menu-close sidebar-close" id="dk-sidebar-menu-close" style="left:-100%;"></div>
+
+            <div class="dk-sidebar-menu sidebar-dark-theme" id="dk-sidebar-menu" style="left:-320px;">
+                <!--- logo section --->
+                <span id="dk-sidebar-menu-off-fixed" class="dk-sidebar-menu-off-fixed" onclick=""><i class="fa fa-thumb-tack"></i></span>
+                <div class="dk-sidebar-menu-off">
+                    <a href="/"><img src="/Content/kardoPasso/img/systemPics/kardo.png" /><span class="logo-sub">Passo</span></a>
+                    <span class="dk-sidebar-menu-off-close sidebar-close"><i class="fa fa-chevron-left"></i></span>
+                    <div class="clear-both"></div>
+                </div>
+                <!--- log-off / log-on --->
+                <div class="dk-sidebar-menu-log">
+                    @if (Session["KardoUserId"] == null && Session["KardoUserName"] == null)
+                    {
+                        <div class="dk-sidebar-menu-log-on">
+                            <a href="/Login"><i class="fa fa-user mar-r-10"></i>LOG IN</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="dk-sidebar-menu-log-off">
+                            <a href="/UserProfile">
+                                <img src="/Content/kardoPasso/img/userProfilPics/@userInfos["profilPic"]" alt="" />
+                                <span>@userInfos["name"] @userInfos["surname"]</span>
+                            </a>
+                        </div>
+                    }
+                </div>
+
+                <!--- menu --->
+                <ul id="dk-accordion-menu">
+                    <li class="dk-sidebar-menu-item active">
+                        <a href="/">
+                            <i class="dk-sidebar-menu-item-logo fa fa-home"></i>
+                            <span class="dk-sidebar-menu-item-title">HomePage</span>
+                            <div class="clear-both"></div>
+                        </a>
+                    </li>
+                    @if (userInfos != null && (bool)userInfos["can_enter_pagePanel"])
+                    {
+                        <li class="dk-sidebar-menu-item">
+                            <a href="/">
+                                <i class="dk-sidebar-menu-item-logo fa fa-angellist"></i>
+                                <span class="dk-sidebar-menu-item-title">Page Panel</span>
+                                <div class="clear-both"></div>
+                            </a>
+                        </li>
+                    }
+                </ul>
+
+                <!--- social sites --->
+                <div class="dk-sidebar-menu-social">
+                    <a href="https://www.facebook.com/kardo.official/" target="blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="https://twitter.com/KardoOfficial" target="blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kardo.official/" target="blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/doguskar" target="blank"><i class="fa fa-youtube"></i></a>
+                </div>
+                <div class="dk-sidebar-menu-footer">
+                    <img src="/Content/kardoPasso/img/systemPics/kardo.png" alt="" />
+                    <span class="cursor-d">Copyright © 2017-2019</span>
+                </div>
+
+            </div>
+        </nav>
+        <!--- sidebar-menu end -->
+        <article class="content-section col-xs-12" id="content-section">
+            @RenderBody()
+        </article>
+        <div id="getKardoPassoPopup" class="dk-popup-overlay closeable-popup">
+            <div class="middle">
+                <div class="dk-popup bg-primary" data-id="getKardoPassoPopup">
+                    <div class="title">
+                        <span class="text">Get KardoPasso</span>
+                        <span class="popup-close close-dk-popup" data-id="getKardoPassoPopup"><i class="fa fa-times"></i></span>
+                    </div>
+                    <form action="" id="getKardoPasso_form" method="post" enctype="multipart/form-data">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div id="getKardoPasso_warning" class="clr-danger"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <span>Do you approve the transaction?</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="getKardoPassoPopup" value="Cancel" />
+                            <input type="submit" class="dk-btn dk-btn-primary save-dk-popup" data-id="getKardoPassoPopup" value="Confirm" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @RenderSection("OutOfArticle", false)
+        <div class="clear-both"></div>
+        <footer class="footer-section dk-footer-sec" id="footer-section">
+            <div class="row margin-0">
+                <div class="col-xs-12">
+                    <a href="/Content/kardoPasso/#"><img src="/Content/kardoPasso/img/systemPics/kardo.png" alt="Kardo" /></a>
+                    <div>Copyright © 2017-2019 - Design and Coding: <a href="#">Doğuş Kar</a></div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    @RenderSection("outOfContainer", false)
+
+
+    <script type="text/javascript" src="/Content/kardoPasso/assets/jquery/jquery.min.1.4.2.js"></script>
+    <script type="text/javascript" src="/Content/kardoPasso/assets/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/Content/kardoPasso/assets/jquery-ui/js/jquery-ui.min.js"></script><!--For Draggable-->
+    <script src="/Content/kardoPasso/assets/bootstrap/js/bootstrap.js"></script>
+    <script src="/Content/kardoPasso/assets/bootstrap/js/bootstrap-settings.js"></script>
+    <script src="/Content/kardoPasso/assets/dcjqaccordion/jquery.dcjqaccordion.2.7.min.js"></script>
+    <script src="/Content/kardoPasso/assets/dcjqaccordion/dcjqaccordion-settings.js"></script>
+    <!--<script src="/Content/kardoPasso/assets/nicescroll/js/jquery.nicescroll.min.js"></script>
+    <script src="/Content/kardoPasso/assets/nicescroll/js/nicescroll-settings.js"></script>
+    <script src="/Content/kardoPasso/assets/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Content/kardoPasso/assets/datatables/media/js/jquery.dataTables-settings.js"></script>
+    <script src="/Content/kardoPasso/assets/dk-style/js/dk-regex.js"></script>
+    <script src="/Content/kardoPasso/assets/count/count.js"></script>-->
+    <script src="/Content/kardoPasso/assets/js.cookie/js.cookie.js"></script>
+    <script src="/Content/kardoPasso/assets/daireEfekt/js/daireEfekt.js"></script>
+    <script src="/Content/kardoPasso/assets/dk-style/js/dk-javascript.js"></script>
+    <script src="/Content/kardoPasso/assets/dk-style/js/dk-sidebar.js"></script>
+    <script src="/Content/kardoPasso/assets/dk-style/js/dynamic-popup.js"></script>
+
+    <script src="/Content/kardoPasso/assets/gritter/js/jquery.gritter.min.js"></script>
+    <script src="/Content/kardoPasso/assets/gritter/js/gritter-settings.js"></script>
+
+    <script type='text/javascript' src='/Content/kardoPasso/js/mainLayout.js'></script>
+    <!--
+    <script src="/Content/kardoPasso/assets\dk-diagrams\js\ddp.js"></script>
+    <script src="/Content/kardoPasso/assets\dk-diagrams\js\diagrams.js"></script>
+    <script src="/Content/kardoPasso/assets\simplepicker-master\js\simplepicker.js"></script>
+    <script src="/Content/kardoPasso/js\simplepicker-settings.js"></script>-->
+    <!---->
+    @if (Request.Cookies["KardoUserInfos"] != null)
+    {
+        if (Request.Cookies["KardoUserInfos"]["userId"] != null && Request.Cookies["KardoUserInfos"]["status"] != null)
+        {
+            string[] savedAccounts = Request.Cookies["KardoUserInfos"]["userId"].Split('_');
+            if (savedAccounts.Length > 1)
+            {
+                <script>
+                        getOtherAccounts('@Request.Cookies["KardoUserInfos"]["userId"]');
+                </script>
+            }
+        }
+    }
+    @RenderSection("script", false)
+</body>
+</html>

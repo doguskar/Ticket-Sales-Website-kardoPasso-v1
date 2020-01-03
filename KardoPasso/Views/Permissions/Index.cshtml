@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Permissions"; 
+    Dictionary<string, Object> userInfos;
+    userInfos = ViewBag.userInfos;
+    if (userInfos != null)
+    {
+        if (string.IsNullOrEmpty(userInfos["profilPic"].ToString()))
+        {
+            userInfos["profilPic"] = "profil_pic.png";
+        }
+    }
+
+    Dictionary<string, List<Object>> roles;
+    roles = ViewBag.roles;
+    List<string> columns = new List<string>();
+    foreach (KeyValuePair<string, List<Object>> item in roles)
+    {
+        if (item.Key != "roleId" && item.Key != "roleName") 
+        { 
+            columns.Add(item.Key);
+        }
+    }
+}
+
+@section head{
+<link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/datatables/media/css/jquery.dataTables-dk-modify.css">
+<style type="text/css">
+    .kardoPasso-content {
+        max-width: 2000px;
+    }
+</style>
+}
+
+<div class="kardoPasso-content">
+    <div class="shortcuts-menu">
+        <nav>
+            <ul>
+                <li><a href="/PagePanel">Go Back</a></li>
+                <li><a href="javascript:;" class="open-dk-popup" data-id="addRolePopup">Add Role</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 pad-l-15 pad-r-15">
+            <div class="dk-table-container">
+                <h1>Roles</h1>
+                <table class="dk-table" id="permissionsTable">
+                    <thead>
+                        <tr>
+                            <th>Role Name</th>
+                            @foreach (var item in columns)
+                            {
+                                string[] itemSp = item.Split('_');
+                                <th>
+                                    @foreach (var item2 in itemSp)
+                                    {
+                                        <span>@item2 </span>
+                                    }
+                                </th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                            @for (int curIn = 0; curIn < roles["roleId"].Count; curIn++)
+                            {
+                                <tr>
+                                    <td>@roles["roleName"][curIn]</td>
+                                    @foreach (var item in columns)
+                                    {
+                                        bool isChecked = (bool)roles[item][curIn];
+                                        if (isChecked)
+                                        {
+                                            <td><input type="checkbox" class="roleCheck" data-column="@item" data-roleid="@roles["roleId"][curIn]" checked /></td>
+                                        }
+                                        else
+                                        {
+                                            <td><input type="checkbox" class="roleCheck" data-column="@item" data-roleid="@roles["roleId"][curIn]" /></td>
+                                        }
+
+                                    }
+
+                                </tr>
+                            }
+                            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section outOfArticle{
+    
+<div id="addRolePopup" class="dk-popup-overlay closeable-popup">
+    <div class="middle">
+        <div class="dk-popup bg-primary" data-id="addRolePopup">
+            <div class="title">
+                <span class="text">Add Role</span>
+                <span class="popup-close close-dk-popup" data-id="addRolePopup"><i class="fa fa-times"></i></span>
+            </div>
+            <form action="" id="addRole_form" method="post">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="addRole_warning" class="clr-danger"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="addRole_name">Role Name:</label><br />
+                            <input type="text" id="addRole_name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <input type="reset" class="dk-btn dk-btn-danger close-dk-popup" data-id="addRolePopup" value="Cancel" />
+                    <input type="submit" class="dk-btn dk-btn-success save-dk-popup" data-id="addRolePopup" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+}
+
+@section script
+{
+    <script src="/Content/kardoPasso/assets/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Content/kardoPasso/js/permissions.js"></script>
+}

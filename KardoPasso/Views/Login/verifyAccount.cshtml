@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "verifyAccount";
+    Layout = "~/Views/Shared/_MiddleLayout.cshtml";
+}
+
+@if (ViewBag.verifyResult != "verified" && ViewBag.verifyResult != "verifiedAccount")
+{
+    Response.Redirect("/Error/NotFound");
+}
+
+<div class="dk-signin-box" id="dk-signin-box">
+    <div class="box-head-sec">
+        <a href="/Kardo/Index">
+            <img src="/Content/kardo/img/systemPics/kardo-icon.png" />
+            <div class="header">Kardo</div>
+        </a>
+    </div>
+    <div class="box-content-sec">
+        <div class="box-content-login">
+            <div class="box-content-register mar-t-10">
+                <div class="register-steps active">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="out-of-middle">
+                                <div class="middle">
+                                    <div class="txt-align-c">
+                                        @if (ViewBag.verifyResult == "verified")
+                                        {
+                                            <div class="header">E-posta Adresiniz Onaylanmıştır</div>
+                                        }else if (ViewBag.verifyResult == "verifiedAccount")
+                                        {
+                                            <div class="header">E-posta Adresiniz Zaten Onaylanmış</div>
+                                        }
+                                        <img src="/Content/kardo/img/systemPics/checkIcon2.gif" alt="checkIcon" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <a href="/Kardo/Index" class="dk-btn dk-btn-wide dk-btn-primary">Anasayfaya Git</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "Log In";
+    Layout = "/Views/Shared/_MiddleLayout.cshtml";
+}
+@section head{
+    <link rel="stylesheet" type="text/css" href="/Content/kardoPasso/assets/dk-style/css/cssload-Michael.css">
+    <style>
+        @@media only screen and (min-width: 767px) and (min-height: 400px) {
+            html{overflow:hidden;}
+        }
+    </style>
+}
+<input type="hidden" id="redirect" value="@ViewBag.redirect" />
+<input type="hidden" id="userInfo"/>
+<div class="dk-signin-box" id="dk-signin-box">
+    <div id="showCheckIcon" class="showCheckIcon">
+        <div class="out-of-middle">
+            <div class="middle">
+                <div class="txt-align-c">
+                    <h1>Oturum Açıldı!</h1>
+                    <img src="/Content/kardoPasso/img/systemPics/checkIcon2.gif" alt="Oturum Açıldı" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-head-sec">
+        @if (@ViewBag.redirect == "True"){
+            <a href="/Default/Index">
+                <img src="/Content/kardoPasso/img/systemPics/kardo-icon.png" />
+                <div class="header">Kardo</div>
+            </a>
+            <div class="back-btn"><a href="/Default/Index"><i class="fa fa-chevron-left"></i></a></div>
+        }else{
+            <a href="javascript:;">
+                <img src="/Content/kardoPasso/img/systemPics/kardo-icon.png" />
+                <div class="header">Kardo</div>
+            </a>
+        }
+    </div>
+    <div class="user-info passive">
+        <div class="text">Kardo</div>
+        <img src="/Content/kardoPasso/img/systemPics/user.png" />
+    </div>
+    <div class="box-content-sec">
+        <div id="dk-loading-sec" class="dk-loading-sec">
+            <div class="out-of-middle">
+                <div class="middle">
+                    <div class="cssload-container">
+                        <div class="cssload-lt"></div>
+                        <div class="cssload-rt"></div>
+                        <div class="cssload-lb"></div>
+                        <div class="cssload-rb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-content-login">
+            <!--<div class="warnings"></div>-->
+            <div id="login_form">
+                <div class="warnings"></div>
+                <div class="login-steps active" id="login-step-1">
+                    <!--<form method="post" id="login-step-1-form">-->
+                        <div class="header">Giriş Yap</div>
+                        <div class="regex_group" id="login-step-1_RegEx">
+                            <div id="user_name_RegEx">
+                                <div class="input-effect">
+                                    <input type="text" name="user_name" id="user_name" placeholder="" class="input-effect-2 dk-regex" data-null="false" data-regex_group="login-step-1_RegEx" />
+                                    <label>Kullanıcı Adı, E-posta</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                            </div>
+                            <input type="button" id="login-step-1-form-btn" value="İlerle" class="dk-btn dk-btn-wide dk-btn-primary regex-group-btn"/>
+                            @if (Request.Cookies["KardoUserInfos"] != null && Session["KardoUserId"] == null)
+                            {
+                                <div class="header">Kayıtlı Hesaplar</div>
+                                <div class="other-accounts" id="other-accounts"></div>
+                            }
+                        </div>
+                    <!--</form>-->
+                </div>
+                <div class="login-steps passive" id="login-step-2">
+                    <!--<form method="post" id="login-step-2-form">-->
+                        <div class="header">Parola Girin</div>
+                        <div class="regex_group" id="login-step-2_RegEx">
+                            <div id="password_RegEx">
+                                <div class="input-effect">
+                                    <input type="password" name="password" id="password" placeholder="" class="input-effect-2 dk-regex" data-null="false" data-regex_group="login-step-2_RegEx" />
+                                    <label>Parola</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 pad-r-5"><input type="button" id="login-step-back-1" value="Geri" class="dk-btn dk-btn-wide dk-btn-default " /></div>
+                                <div class="col-xs-6 pad-l-5"><input type="button" id="login-step-2-form-btn" value="Giriş Yap" class="dk-btn dk-btn-wide dk-btn-primary regex-group-btn" /></div>
+                            </div>
+                            <label class="dk-cbox mar-t-10">
+                                <input id="remember_me" type="checkbox" name="remember_me" checked/>
+                                <span class="dk-cbox">
+                                    <span></span>
+                                </span>
+                                <span class="text">Beni Hatırla</span>
+                            </label><br />
+                            <label class="dk-cbox">
+                                <input id="session_checkbox" type="checkbox" name="session_checkbox" />
+                                <span class="dk-cbox">
+                                    <span></span>
+                                </span>
+                                <span class="text">Oturumu Açık Bırak</span>
+                            </label>
+                        </div>
+                    <!--</form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer-sec">
+        <div id="login-step-1-footer" class="login-step-1-footer font-s-12 active">
+            <span>Hesabınız yok mu? </span>
+            <a href="javascript:;" id="register_link">Bir hesap oluştur!</a>
+        </div>
+        <div id="login-step-2-footer" class="login-step-2-footer font-s-12 passive">
+            <span>Şifreni mi unuttun? </span>
+            <a href="javascript:;">Şifreni sıfırla!</a>
+        </div>
+    </div>
+
+</div>
+
+    @section script{
+        <script type='text/javascript' src='/Content/kardoPasso/js/mainLayout.js'></script>
+        <script type='text/javascript' src='/Content/kardoPasso/js/login.js'></script>
+
+        @if (Request.Cookies["KardoUserInfos"] != null)
+        {
+            if (Request.Cookies["KardoUserInfos"]["userId"] != null && Request.Cookies["KardoUserInfos"]["status"] != null)
+            {
+                string[] savedAccounts = Request.Cookies["KardoUserInfos"]["userId"].Split('_');
+                if (savedAccounts.Length > 1)
+                {
+                    <script>
+                        getOtherAccounts('@Request.Cookies["KardoUserInfos"]["userId"]');
+                    </script>
+                }
+            }
+        }
+    }

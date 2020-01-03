@@ -1,0 +1,1004 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83E4B9F5-B389-4378-9F2D-110B8EAE2D22}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KardoPasso</RootNamespace>
+    <AssemblyName>KardoPasso</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\kardoPasso\3.6\css\kardo.css" />
+    <Content Include="Content\kardoPasso\3.6\css\kardoPasso.css" />
+    <Content Include="Content\kardoPasso\3.6\css\reset.css" />
+    <Content Include="Content\kardoPasso\3.6\kardoPasso_index.html" />
+    <Content Include="Content\kardoPasso\404.html" />
+    <Content Include="Content\kardoPasso\500.html" />
+    <Content Include="Content\kardoPasso\assets\bootstrap\bootstrap.css" />
+    <Content Include="Content\kardoPasso\assets\bootstrap\js\bootstrap-settings.js" />
+    <Content Include="Content\kardoPasso\assets\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\kardoPasso\assets\count\count.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\column_render.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\complex_header.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\defaults.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\dom_multiple_elements.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\dom_toolbar.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\dt_events.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\events_live.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\footer_callback.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\html5-data-attributes.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\html5-data-options.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\language_file.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\length_menu.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\object_dom_read.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\row_callback.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\row_grouping.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\advanced_init\sort_direction_control.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\custom_data_flat.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\custom_data_property.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\arrays.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\arrays_custom_prop.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\arrays_subobjects.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\objects.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\objects_deep.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\objects_root_array.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\objects_subarrays.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\data\orthogonal.txt" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\deep.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\defer_render.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\null_data_source.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\objects.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\objects_subarrays.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\orthogonal-data.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\ajax\simple.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\add_row.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\api_in_init.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\counter_columns.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\form.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\highlight.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\multi_filter.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\multi_filter_select.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\regex.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\row_details.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\select_row.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\select_single_row.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\show_hide.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\api\tabs_and_scrolling.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\alt_pagination.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\comma-decimal.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\complex_header.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\dom.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\filter_only.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\flexible_width.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\hidden_columns.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\language.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\multiple_tables.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\multi_col_sort.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\scroll_x.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\scroll_xy.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\scroll_y.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\scroll_y_dynamic.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\state_save.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\table_sorting.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\basic_init\zero_configuration.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\data_sources\ajax.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\data_sources\dom.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\data_sources\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\data_sources\js_array.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\data_sources\server_side.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\plug-ins\api.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\plug-ins\dom_sort.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\plug-ins\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\plug-ins\range_filtering.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\plug-ins\sorting_auto.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\plug-ins\sorting_manual.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\demo.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\demo.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\details_close.png" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\details_open.png" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\syntax\shCore.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\syntax\shCore.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\custom_vars.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\defer_loading.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\ids.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\jsonp.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\object_data.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\pipeline.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\post.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\row_details.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\mysql.sql" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\oracle.sql" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\postgres.sql" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\sqlite.sql" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\sqlserver.sql" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\select_rows.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\simple.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\bootstrap.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\bootstrap4.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\cell-border.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\compact.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\display.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\foundation.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\hover.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\index.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\jqueryUI.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\material.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\no-classes.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\order-column.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\row-border.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\semanticui.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\stripe.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\styling\uikit.html" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.bootstrap.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.foundation.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.foundation.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.jqueryui.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.material.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.material.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.semanticui.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.uikit.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\dataTables.uikit.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\jquery.dataTables-dk-modify.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\jquery.dataTables.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\jquery.dataTables.min.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\images\favicon.ico" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\images\sort_asc.png" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\images\sort_both.png" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\images\sort_desc.png" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.bootstrap.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.foundation.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.foundation.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.jqueryui.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.material.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.material.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.semanticui.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.uikit.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\dataTables.uikit.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\jquery.dataTables-settings.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\jquery.dataTables.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\jquery.dataTables.min.js" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\js\jquery.js" />
+    <Content Include="Content\kardoPasso\assets\dcjqaccordion\dcjqaccordion-settings.js" />
+    <Content Include="Content\kardoPasso\assets\dcjqaccordion\jquery.cookie.js" />
+    <Content Include="Content\kardoPasso\assets\dcjqaccordion\jquery.dcjqaccordion.2.7.min.js" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\css\diagrams-style.css" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\css\uml-java.css" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\annotation-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\annotation-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\class-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\class-abstract-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\class-abstract-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\class-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\class-static-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\class-static-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\enum-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\enum-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\field-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\field-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\interface-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\interface-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\method-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\method-abstract-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\method-abstract-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\method-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\method-static-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\method-static-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\annotation-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\class-abstract-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\class-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\class-static-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\enum-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\field.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\interface-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\lvariable-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\method-abstract-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\method-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\method-static-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\dark\parameter-dark.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\annotation.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\class-abstract.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\class-static.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\class.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\enum.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\field.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\interface.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\method-abstract.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\method-static.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\method.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\parameter.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\light\variable.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\parameter-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\parameter-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\variable-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\variable-dark-14px.png" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\js\ddp.js" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\js\diagrams.js" />
+    <Content Include="Content\kardoPasso\assets\dk-style\css\cssload-Michael.css" />
+    <Content Include="Content\kardoPasso\assets\dk-style\css\dk-style.7.5.2018.css" />
+    <Content Include="Content\kardoPasso\assets\dk-style\css\dk-style.css" />
+    <Content Include="Content\kardoPasso\assets\dk-style\css\windows8_icon.css" />
+    <Content Include="Content\kardoPasso\assets\dk-style\js\dk-javascript.js" />
+    <Content Include="Content\kardoPasso\assets\dk-style\js\dk-regex.js" />
+    <Content Include="Content\kardoPasso\assets\dk-style\js\dk-sidebar.js" />
+    <Content Include="Content\kardoPasso\assets\dk-style\js\dynamic-popup.js" />
+    <Content Include="Content\kardoPasso\assets\dk-style\js\input-effect.js" />
+    <Content Include="Content\kardoPasso\assets\dk-style\js\register-box.js" />
+    <Content Include="Content\kardoPasso\assets\fontawesome\css\font-awesome.css" />
+    <Content Include="Content\kardoPasso\assets\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\kardoPasso\assets\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\kardoPasso\assets\gritter\images\gritter-light.png" />
+    <Content Include="Content\kardoPasso\assets\gritter\images\gritter-long.png" />
+    <Content Include="Content\kardoPasso\assets\gritter\images\gritter.png" />
+    <Content Include="Content\kardoPasso\assets\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\kardoPasso\assets\gritter\index.html" />
+    <Content Include="Content\kardoPasso\assets\gritter\js\gritter-settings.js" />
+    <Content Include="Content\kardoPasso\assets\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\kardoPasso\assets\gritter\js\jquery.gritter.min.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\css\highcharts.css" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts-3d.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts-3d.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts-more.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts-more.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts-3d.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts-3d.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts-more.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts-more.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\accessibility.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\accessibility.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\annotations.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\annotations.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\boost-canvas.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\boost-canvas.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\boost.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\boost.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\broken-axis.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\broken-axis.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\bullet.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\bullet.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\data.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\data.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\drag-panes.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\drag-panes.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\drilldown.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\drilldown.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\export-data.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\export-data.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\exporting.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\exporting.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\funnel.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\funnel.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\gantt.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\gantt.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\grid-axis.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\grid-axis.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\heatmap.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\heatmap.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\histogram-bellcurve.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\histogram-bellcurve.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\item-series.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\item-series.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\no-data-to-display.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\no-data-to-display.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\offline-exporting.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\offline-exporting.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\oldie.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\oldie.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\overlapping-datalabels.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\overlapping-datalabels.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\parallel-coordinates.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\parallel-coordinates.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\pareto.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\pareto.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\sankey.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\sankey.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\series-label.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\series-label.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\solid-gauge.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\solid-gauge.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\static-scale.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\static-scale.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\stock.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\stock.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\streamgraph.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\streamgraph.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\sunburst.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\sunburst.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\tilemap.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\tilemap.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\treemap.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\treemap.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\variable-pie.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\variable-pie.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\variwide.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\variwide.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\vector.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\vector.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\windbarb.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\windbarb.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\wordcloud.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\wordcloud.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\xrange.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\xrange.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\avocado.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\avocado.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-blue.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-blue.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-green.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-green.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-unica.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-unica.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\gray.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\gray.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\grid-light.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\grid-light.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\grid.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\grid.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\sand-signika.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\sand-signika.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\skies.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\skies.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\sunset.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\sunset.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\canvg.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\canvg.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\jspdf.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\jspdf.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\rgbcolor.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\rgbcolor.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\svg2pdf.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\lib\svg2pdf.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\accessibility.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\accessibility.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\annotations.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\annotations.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\boost-canvas.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\boost-canvas.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\boost.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\boost.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\broken-axis.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\broken-axis.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\bullet.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\bullet.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\data.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\data.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\drag-panes.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\drag-panes.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\drilldown.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\drilldown.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\export-data.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\export-data.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\exporting.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\exporting.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\funnel.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\funnel.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\gantt.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\gantt.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\grid-axis.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\grid-axis.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\heatmap.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\heatmap.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\histogram-bellcurve.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\histogram-bellcurve.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\item-series.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\item-series.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\no-data-to-display.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\no-data-to-display.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\offline-exporting.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\offline-exporting.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\oldie.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\oldie.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\overlapping-datalabels.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\overlapping-datalabels.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\parallel-coordinates.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\parallel-coordinates.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\pareto.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\pareto.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\sankey.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\sankey.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\series-label.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\series-label.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\solid-gauge.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\solid-gauge.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\static-scale.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\static-scale.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\stock.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\stock.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\streamgraph.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\streamgraph.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\sunburst.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\sunburst.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\tilemap.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\tilemap.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\treemap.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\treemap.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\variable-pie.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\variable-pie.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\variwide.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\variwide.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\vector.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\vector.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\windbarb.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\windbarb.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\wordcloud.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\wordcloud.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\xrange.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\xrange.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\readme.txt" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\avocado.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\avocado.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-blue.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-blue.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-green.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-green.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-unica.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-unica.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\gray.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\gray.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\grid-light.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\grid-light.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\grid.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\grid.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\sand-signika.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\sand-signika.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\skies.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\skies.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\sunset.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\sunset.src.js" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\3d-column-interactive\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\3d-column-null-values\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\3d-column-stacking-grouping\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\3d-pie-donut\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\3d-pie\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\3d-scatter-draggable\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\annotations\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\area-basic\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\area-inverted\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\area-missing\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\area-negative\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\area-stacked-percent\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\area-stacked\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\arearange-line\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\arearange\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\areaspline\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\bar-basic\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\bar-negative-stack\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\bar-stacked\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\bellcurve\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\box-plot\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\bubble-3d\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\bubble\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\bullet-graph\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\chart-update\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-basic\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-drilldown\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-negative\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-parsed\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-placement\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-rotated-labels\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-stacked-and-grouped\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-stacked-percent\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\column-stacked\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\columnrange\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\combo-dual-axes\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\combo-meteogram\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\combo-multi-axes\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\combo-regression\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\combo-timeline\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\combo\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\dynamic-click-to-add\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\dynamic-master-detail\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\dynamic-update\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\error-bar\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\funnel\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\gauge-activity\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\gauge-clock\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\gauge-dual\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\gauge-solid\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\gauge-speedometer\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\gauge-vu-meter\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\heatmap-canvas\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\heatmap\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\histogram\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\honeycomb-usa\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\item-series\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\line-ajax\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\line-basic\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\line-boost\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\line-labels\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\line-log-axis\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\line-time-series\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\parallel-coordinates\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pareto\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pie-basic\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pie-donut\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pie-drilldown\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pie-gradient\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pie-legend\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pie-monochrome\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pie-semi-circle\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\polar-spider\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\polar-wind-rose\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\polar\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\polygon\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\pyramid\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\renderer\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\responsive\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\sankey-diagram\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\scatter-boost\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\scatter\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\sparkline\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\spline-inverted\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\spline-irregular-time\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\spline-plot-bands\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\spline-symbols\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\streamgraph\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\styled-mode-column\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\styled-mode-pie\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\sunburst\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\synchronized-charts\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\treemap-coloraxis\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\treemap-large-dataset\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\treemap-with-levels\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\variable-radius-pie\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\variwide\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\vector-plot\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\waterfall\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\windbarb-series\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\wordcloud\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\examples\x-range\index.htm" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\gfx\vml-radial-gradient.png" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\arrow.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\circle.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\earth.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\feature.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\fibonacci.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\flag-circlepin.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\flag-diamondpin.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\flag-flag.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\flag-squarepin.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\flag.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\line.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\meteogram-symbols-30px.png" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\rect.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\reset.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\save.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\search.png" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\skies.jpg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\snow.png" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\sun.png" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\text.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\graphics\tunnel.svg" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\index.htm" />
+    <Content Include="Content\kardoPasso\assets\jquery-ui\css\jquery-ui.min.css" />
+    <Content Include="Content\kardoPasso\assets\jquery-ui\js\jquery-ui.min.js" />
+    <Content Include="Content\kardoPasso\assets\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Content\kardoPasso\assets\jquery\jquery.min.1.4.2.js" />
+    <Content Include="Content\kardoPasso\assets\js.cookie\js.cookie.js" />
+    <Content Include="Content\kardoPasso\assets\nicescroll\js\jquery.nicescroll.js" />
+    <Content Include="Content\kardoPasso\assets\nicescroll\js\jquery.nicescroll.min.js" />
+    <Content Include="Content\kardoPasso\assets\nicescroll\js\nicescroll-settings.js" />
+    <Content Include="Content\kardoPasso\assets\nicescroll\js\zoomico.png" />
+    <Content Include="Content\kardoPasso\assets\youDontNeedJavaScript\carousel-1.css" />
+    <Content Include="Content\kardoPasso\assets\youDontNeedJavaScript\carousel-1.html" />
+    <Content Include="Content\kardoPasso\buttons.html" />
+    <Content Include="Content\kardoPasso\css\kardo.css" />
+    <Content Include="Content\kardoPasso\css\kardoPasso.css" />
+    <Content Include="Content\kardoPasso\css\reset.css" />
+    <Content Include="Content\kardoPasso\general.html" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg1.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg10.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg11.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg12.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg13.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg14.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg15.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg16.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg17.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg18.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg19.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg2.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg20.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg21.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg22.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg23.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg24.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg25.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg26.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg27.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg3.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg4.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg5.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg6.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg7.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg8.jpg" />
+    <Content Include="Content\kardoPasso\img\backgrounds\bg9.jpg" />
+    <Content Include="Content\kardoPasso\img\emoji\1.png" />
+    <Content Include="Content\kardoPasso\img\emoji\10.png" />
+    <Content Include="Content\kardoPasso\img\emoji\11.png" />
+    <Content Include="Content\kardoPasso\img\emoji\12.png" />
+    <Content Include="Content\kardoPasso\img\emoji\13.png" />
+    <Content Include="Content\kardoPasso\img\emoji\2.png" />
+    <Content Include="Content\kardoPasso\img\emoji\3.png" />
+    <Content Include="Content\kardoPasso\img\emoji\4.png" />
+    <Content Include="Content\kardoPasso\img\emoji\5.png" />
+    <Content Include="Content\kardoPasso\img\emoji\6.png" />
+    <Content Include="Content\kardoPasso\img\emoji\7.png" />
+    <Content Include="Content\kardoPasso\img\emoji\8.png" />
+    <Content Include="Content\kardoPasso\img\emoji\9.png" />
+    <Content Include="Content\kardoPasso\img\emoji\Hugging_Face.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\arama.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\checkIcon1.gif" />
+    <Content Include="Content\kardoPasso\img\systemPics\checkIcon2.gif" />
+    <Content Include="Content\kardoPasso\img\systemPics\dogus2.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\giphy-or.gif" />
+    <Content Include="Content\kardoPasso\img\systemPics\giphy.gif" />
+    <Content Include="Content\kardoPasso\img\systemPics\kardo-icon-bw.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\kardo-icon.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\kardo-k.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\kardo.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\minus.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\oops.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\oops2.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\oops3.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\oops4.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\plus.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\search1.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\takvim.png" />
+    <Content Include="Content\kardoPasso\img\systemPics\user.png" />
+    <Content Include="Content\kardoPasso\img\uploads\25022019200544-erzurum24.jpg" />
+    <Content Include="Content\kardoPasso\img\uploads\25022019200544-erzurum243.jpg" />
+    <Content Include="Content\kardoPasso\img\uploads\25022019200544-erzurum244.jpg" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\25022019200544-erzurum24.jpg" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\başakşehir.png" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\beşiktaş.png" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\fener.png" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\galatasaray.png" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\sportoto_superlig_logo.png" />
+    <Content Include="Content\kardoPasso\img\uploads\bjk-fb-supertoto-narrow.jpg" />
+    <Content Include="Content\kardoPasso\img\uploads\bjk-fb-supertoto.jpg" />
+    <Content Include="Content\kardoPasso\img\uploads\yerlesim-plani-2.jpg" />
+    <Content Include="Content\kardoPasso\img\userProfilPics\kardo-icon.png" />
+    <Content Include="Content\kardoPasso\img\userProfilPics\profil.jpg" />
+    <Content Include="Content\kardoPasso\img\userProfilPics\profil_pic.png" />
+    <Content Include="Content\kardoPasso\img\userProfilPics\user.png" />
+    <Content Include="Content\kardoPasso\index.html" />
+    <Content Include="Content\kardoPasso\js\default.js" />
+    <Content Include="Content\kardoPasso\js\editStadium.js" />
+    <Content Include="Content\kardoPasso\js\kardoHomePage.js" />
+    <Content Include="Content\kardoPasso\js\login.js" />
+    <Content Include="Content\kardoPasso\js\mainLayout.js" />
+    <Content Include="Content\kardoPasso\js\panelPage.js" />
+    <Content Include="Content\kardoPasso\js\permissions.js" />
+    <Content Include="Content\kardoPasso\js\userProfile.js" />
+    <Content Include="Content\kardoPasso\kardoPasso_editPermissions.html" />
+    <Content Include="Content\kardoPasso\kardoPasso_editStadium.html" />
+    <Content Include="Content\kardoPasso\kardoPasso_eventDetails.html" />
+    <Content Include="Content\kardoPasso\kardoPasso_governance.html" />
+    <Content Include="Content\kardoPasso\kardoPasso_index.html" />
+    <Content Include="Content\kardoPasso\kardoPasso_profile.html" />
+    <Content Include="Content\kardoPasso\kardoPasso_sales.html" />
+    <Content Include="Content\kardoPasso\login.html" />
+    <Content Include="Content\kardoPasso\tables.html" />
+    <Content Include="Content\kardoPasso\UMLDiagramCreator.html" />
+    <Content Include="Content\kardoPasso\verifyAccount.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\examples.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\resources\syntax\Syntax Highlighter license" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\ids-arrays.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\ids-objects.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\jsonp.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\objects.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\post.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\server_processing.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\examples\server_side\scripts\ssp.class.php" />
+    <Content Include="Content\kardoPasso\assets\datatables\media\images\Sorting icons.psd" />
+    <Content Include="Content\kardoPasso\assets\dk-diagrams\img\org\list-img-sablon.psd" />
+    <Content Include="Content\kardoPasso\assets\dk-style\fonts\ArgBiwSc.ttf" />
+    <Content Include="Content\kardoPasso\assets\dk-style\fonts\NotoSans-Regular.ttf" />
+    <Content Include="Content\kardoPasso\assets\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\kardoPasso\assets\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\kardoPasso\assets\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\kardoPasso\assets\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\kardoPasso\assets\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\css\highcharts.scss" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts-3d.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts-more.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\highcharts.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts-3d.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts-more.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\highcharts.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\accessibility.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\annotations.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\boost-canvas.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\boost.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\broken-axis.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\bullet.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\data.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\drag-panes.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\drilldown.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\export-data.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\exporting.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\funnel.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\gantt.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\grid-axis.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\heatmap.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\histogram-bellcurve.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\item-series.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\no-data-to-display.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\offline-exporting.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\oldie.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\overlapping-datalabels.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\parallel-coordinates.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\pareto.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\sankey.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\series-label.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\solid-gauge.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\static-scale.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\stock.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\streamgraph.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\sunburst.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\tilemap.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\treemap.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\variable-pie.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\variwide.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\vector.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\windbarb.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\wordcloud.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\modules\xrange.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\avocado.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-blue.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-green.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\dark-unica.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\gray.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\grid-light.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\grid.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\sand-signika.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\skies.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\js\themes\sunset.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\accessibility.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\annotations.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\boost-canvas.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\boost.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\broken-axis.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\bullet.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\data.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\drag-panes.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\drilldown.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\export-data.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\exporting.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\funnel.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\gantt.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\grid-axis.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\heatmap.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\histogram-bellcurve.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\item-series.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\no-data-to-display.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\offline-exporting.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\oldie.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\overlapping-datalabels.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\parallel-coordinates.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\pareto.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\sankey.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\series-label.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\solid-gauge.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\static-scale.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\stock.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\streamgraph.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\sunburst.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\tilemap.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\treemap.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\variable-pie.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\variwide.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\vector.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\windbarb.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\wordcloud.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\modules\xrange.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\avocado.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-blue.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-green.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\dark-unica.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\gray.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\grid-light.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\grid.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\sand-signika.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\skies.js.map" />
+    <Content Include="Content\kardoPasso\assets\highcharts-6.0.4\code\themes\sunset.js.map" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\1 - Copy.psd" />
+    <Content Include="Content\kardoPasso\img\uploads\basic imgs\1.psd" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_viewstart.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\EditStadiumController.cs" />
+    <Compile Include="Controllers\EventDetailAdminController.cs" />
+    <Compile Include="Controllers\EventDetailController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PagePanelController.cs" />
+    <Compile Include="Controllers\PermissionsController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Libraries\KardoEncryption.cs" />
+    <Compile Include="Libraries\KardoEncryptionASCII.cs" />
+    <Compile Include="Libraries\KardoStaticMethods.cs" />
+    <Compile Include="Libraries\KardoUID.cs" />
+    <Compile Include="Libraries\UseKardoEncryption.cs" />
+    <Compile Include="Models\DB_Connection.cs" />
+    <Compile Include="Models\DefaultModel.cs" />
+    <Compile Include="Models\EditStadiumModel.cs" />
+    <Compile Include="Models\EventDetailModel.cs" />
+    <Compile Include="Models\KardoGeneralModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\PagePanelModel.cs" />
+    <Compile Include="Models\PermissionsModel.cs" />
+    <Compile Include="Models\UserProfileModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Shared\_MiddleLayout.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\verifyAccount.cshtml" />
+    <Content Include="Views\UserProfile\Index.cshtml" />
+    <Content Include="Views\EventDetail\Index.cshtml" />
+    <Content Include="Views\PagePanel\Index.cshtml" />
+    <Content Include="Views\EventDetailAdmin\Index.cshtml" />
+    <Content Include="Views\EditStadium\Index.cshtml" />
+    <Content Include="Views\Permissions\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\kardoPasso\img\userPics\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7093</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7057/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
